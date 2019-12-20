@@ -46,7 +46,7 @@ html {
 
 .navText {
     color: white;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     margin: 0 15px;
     font-size: 14px;
@@ -102,7 +102,7 @@ html {
 
 #part1-in {
     width: 1150px;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -117,12 +117,12 @@ html {
 #part1-desc {
     color: white;
     font-size: 18px;
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     margin-top: 25px;
 }
 
 .part1-btns {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     color: white;
     font-weight: 500;
@@ -166,7 +166,7 @@ html {
 }
 
 #part2-title {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-size: 36px;
     color: var(--darkText);
     letter-spacing: 5px;
@@ -176,7 +176,7 @@ html {
 #part2-txt {
     margin-top: 15px;
     width: 30%;
-    font-family: Open sans;
+    font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     color: var(--darkText);
 }
@@ -204,7 +204,7 @@ html {
 .part3-item span {
     text-align: center;
     font-size: 15px;
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 200;
     letter-spacing: 1px;
 }
@@ -248,14 +248,14 @@ html {
 }
 
 #part6-title {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     color: var(--darkText);
     letter-spacing: 5px;
     font-size: 36px;
 }
 
 #part6-btn {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     color: white;
     letter-spacing: 2px;
     font-size: 30px;
@@ -296,7 +296,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-sections:last-of-type {
