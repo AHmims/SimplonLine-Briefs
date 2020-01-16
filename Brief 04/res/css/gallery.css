@@ -4,6 +4,7 @@
     background-position-y: bottom;
     /*  */
     border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     /* flex-direction: row; */
     flex-direction: column;
     justify-content: center;
@@ -13,6 +14,7 @@
 }
 
 #landing-title {
+    margin-top: 100px;
     letter-spacing: 1px;
     width: 60%;
 }
@@ -77,6 +79,7 @@
     flex-wrap: wrap;
     /* justify-content: space-between; */
     /* align-items: flex-end; */
+    scroll-behavior: smooth;
     overflow-x: scroll;
 }
 
@@ -108,6 +111,8 @@
     background-position: center;
     background-size: cover;
     border-radius: 15px;
+    /*  */
+    /* background-image: linear-gradient(#ffffff59, #ffffff59); */
 }
 
 /*  */
@@ -274,4 +279,342 @@
     background-size: 150%;
     background-position: center;
     border-radius: 15px;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+@media screen and (max-width:1650px) {
+    .sides-margin {
+        margin: 0 50px;
+    }
+
+    #landing-title {
+        width: 70%;
+    }
+
+    .navText {
+        font-size: 16px;
+        margin: 0 15px;
+    }
+
+    #landing_bot {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    #page-title {
+        left: 50px;
+        margin-top: 50px;
+        FONT-SIZE: 9.5vw;
+        top: unset;
+    }
+
+    /*  */
+    #details,
+    #part7 {
+        padding: 0 50px;
+    }
+}
+
+/*  */
+@media screen and (max-width:1400px) {
+    #page-title {
+        display: none;
+    }
+
+    #landing_bot {
+        justify-content: center;
+    }
+
+    #frame {
+        width: 900px;
+        border-top-right-radius: 20px;
+    }
+
+    #white-space {
+        height: 75px;
+    }
+
+    #footer {
+        padding: 0 50px;
+    }
+}
+
+@media screen and (max-width:1250px) {
+
+    #landing-title,
+    #landing-title-highlight {
+        font-size: 60px;
+    }
+
+    .details-title {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width:1050px) {
+
+    #landing-title,
+    #landing-title-highlight {
+        font-size: 55px;
+    }
+
+    #landing-desc {
+        width: 50%;
+        font-size: 18px;
+    }
+
+    #details {
+        flex-direction: column;
+        height: unset;
+    }
+
+    #details-reviews-cont {
+        padding-right: 0;
+    }
+
+    #details-map {
+        height: 350px;
+    }
+}
+
+@media screen and (max-width:950px) {
+    #frame {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width:850px) {
+    #NavBar-Desktop {
+        display: none;
+    }
+
+    #nav-menu-logo img {
+        width: unset;
+    }
+
+    #NavBar-Mobile {
+        display: flex;
+    }
+
+    #landing-content {
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+
+    #landing-title {
+        width: 100%;
+    }
+
+    #landing-desc {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:720px) {
+    #part7 {
+        display: none;
+    }
+
+    #footer {
+        margin-top: 25px;
+    }
+
+    /*  */
+    #Landing {
+        background-image: linear-gradient(#04151f33, #04151f33), url('../img/gallery/bg1.jpg');
+        height: 775px;
+    }
+
+    /*  */
+    #frame {
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        height: unset;
+        flex-direction: column;
+        padding: 8px 8px;
+        padding-bottom: 0;
+        width: 100%;
+        /*  */
+        position: absolute;
+        margin-top: 106px;
+    }
+
+    #frame-images-container {
+        width: 100%;
+        flex-wrap: unset;
+        border-radius: 25px;
+    }
+
+    .frame-images-row {
+        width: unset;
+    }
+
+    .frame-image {
+        /* border-radius: 25px; */
+        width: 100px;
+        height: 100px;
+    }
+
+    #frame-images-container:first-child {
+        margin-bottom: unset;
+    }
+
+    /*  */
+    #frame-navigate {
+        margin-left: 0;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    #frame-navigate-progress {
+        margin-left: 10px;
+    }
+
+    /*  */
+    #white-space {
+        height: 135px;
+    }
+}
+
+/*  */
+@media screen and (max-width:500px) {
+    #nav-menu {
+        padding-bottom: 30px;
+        padding-left: 10px;
+        padding-top: 10px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .nav-menu-item:last-of-type {
+        margin-bottom: 0;
+    }
+
+    #nav-close {
+        margin-bottom: 10px;
+    }
+
+    .nav-menu-item {
+        font-size: 15px;
+        width: 80%;
+        margin-bottom: 5px;
+        border-bottom: 3px solid var(--shade2);
+    }
+
+
+
+
+
+
+    /*  */
+    #nav-menu-logo img {
+        width: 150px;
+    }
+
+    #Landing {
+        height: 396px;
+        /* background-position: right; */
+    }
+
+    #landing-title {
+        margin-top: unset;
+    }
+
+    #landing-title,
+    #landing-title-highlight {
+        font-size: 25px;
+        letter-spacing: unset;
+    }
+
+    #landing-desc {
+        font-size: 14px;
+        width: unset;
+        padding: 0 20px;
+    }
+
+    /*  */
+    #frame {
+        margin-top: 62.5px;
+    }
+
+    #frame-images-container {
+        border-radius: 15px;
+    }
+
+    .frame-image {
+        width: 59px;
+        height: 59px;
+        margin-right: 15px;
+    }
+
+    /*  */
+    #frame-navigate-progress {
+        font-size: 25px;
+    }
+
+    .frame-navigate-btn {
+        width: 37px;
+        height: 28px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .frame-navigate-btn img {
+        width: 22px;
+    }
+
+    /*  */
+    #white-space {
+        height: 75px;
+    }
+
+    /*  */
+    #details {
+        padding: 0 10px;
+    }
+
+    .details-title {
+        font-size: 35px;
+    }
+
+    #details-reviews-cont {
+        margin-top: 20px;
+    }
+
+    .review-top {
+        align-items: center;
+    }
+
+    .review-title {
+        font-size: 20px;
+    }
+
+    .review-rate {
+        object-fit: contain;
+        height: 13.5px;
+    }
+
+    .review-desc {
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    .review-auther {
+        font-size: 10px;
+    }
+
+    /*  */
+    #details-map {
+        height: 188px;
+    }
+
+    /*  */
+    #footer {
+        height: 25px;
+        font-size: 6px;
+        padding: 0 10px;
+    }
 }
