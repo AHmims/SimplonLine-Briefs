@@ -1,0 +1,74 @@
+@use 'colors';
+@use 'shared';
+
+
+#content {
+    width: 100%;
+    height: 100%;
+    @include shared.flex-col-sta;
+    background-color: colors.$white;
+}
+
+// 
+#landing {
+    background-color: colors.$white;
+    border-bottom: 1px solid colors.$gray;
+    width: 100%;
+    height: 700px;
+    box-sizing: border-box;
+    padding: 25px;
+    padding-top: 0;
+    // 
+    // background-size: cover;
+    // background-position: center;
+    // background-image: url('../../app/img/gallery/bg10.jpg');
+
+    // @include shared.flex-col-cen;
+}
+
+// 
+#landing-content {
+    @include shared.flex-col-cen;
+}
+
+#landing-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 75px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: colors.$black;
+}
+
+// 
+// 
+#navigation {
+    width: 100%;
+    border-bottom: 1px solid colors.$gray;
+    padding: 0 50px;
+    box-sizing: border-box;
+
+    #navCont {
+        width: fit-content;
+        @include shared.flex-row-cen;
+        margin-left: auto;
+        position: relative;
+        margin-top: -25px;
+
+        div {
+            @include shared.flex-col-cen;
+            background-color: colors.$black;
+            cursor: pointer;
+            width: 65px;
+            height: 50px;
+            transition: 200ms background-color ease-in-out;
+
+            &:hover {
+                background-color: colors.$mid-black;
+            }
+
+            i {
+                color: colors.$white;
+            }
+        }
+    }
+}

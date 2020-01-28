@@ -1,3 +1,5 @@
+@import url("https://css.gg/c");
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto+Slab&display=swap");
 body,
 html {
   width: 100%;
@@ -8,17 +10,17 @@ html {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  background-color: #161616;
 }
 
 #navBar {
   width: 85px;
   height: 100%;
-  background-color: #fafafa;
+  background-color: #fdfdfd;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  border-right: 1px solid #ececec;
 }
 
 #navBar-top,
@@ -35,22 +37,25 @@ html {
   align-items: center;
 }
 
-#ico {
+.layer {
   width: 60px;
   height: 60px;
-  background-color: red;
+  border: 1.5px solid #3e64ff;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border-radius: 999px;
+  cursor: pointer;
 }
 
-#in-ico {
-  width: 46px;
-  height: 46px;
-  background-color: white;
-  border-radius: 999px;
+#logo {
+  width: 40px;
+  height: 40px;
+}
+
+#logo-txt {
+  display: none;
 }
 
 #navBar-bot {
@@ -58,6 +63,127 @@ html {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
+}
+
+#navBar-icons {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+#navBar-icons a {
+  width: 45px;
+  height: 45px;
+  border: 1.5px solid #fdfdfd;
+  border-radius: 999px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#navBar-icons a:hover {
+  border-color: #3e64ff;
+}
+#navBar-icons a:hover:after {
+  content: attr(name);
+  position: absolute;
+  left: 65px;
+  background-color: #fdfdfd;
+  color: #3e64ff;
+  box-sizing: border-box;
+  padding: 3px 5px;
+  font-family: "Roboto", sans-serif;
+  border-radius: 3px;
+  font-weight: 600;
+}
+#navBar-icons a i {
+  color: #3e64ff;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #navBar {
+    width: 100%;
+    height: 75px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-right: none;
+    border-bottom: 1px solid #ececec;
+  }
+
+  #navBar-top,
+#navBar-bot {
+    box-sizing: border-box;
+    padding: 7.5px;
+    flex: 1;
+  }
+
+  #navBar-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  #logo-txt {
+    display: block;
+    font-family: "Roboto Slab", cursive;
+    font-size: 18px;
+    font-weight: 600;
+    color: #3e64ff;
+  }
+
+  .layer {
+    width: 50px;
+    height: 50px;
+    border-color: transparent;
+  }
+
+  #navBar-bot {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  #navBar-icons {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  #navBar-icons a {
+    flex: none;
+  }
+  #navBar-icons a:hover:after {
+    content: "";
+    background: none;
+    padding: 0;
+  }
 }
 
 /*# sourceMappingURL=navBar.css.map */
