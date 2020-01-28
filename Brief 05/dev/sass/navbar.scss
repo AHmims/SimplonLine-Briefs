@@ -1,0 +1,59 @@
+@use 'colors';
+@use 'shared';
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    // 
+    @include shared.flex-row-sta;
+    // 
+    background-color: colors.$black;
+}
+
+// 
+#navBar {
+    width: 85px;
+    height: 100%;
+    // position: fixed;
+    background-color: colors.$white;
+    @include shared.flex-col-sta;
+}
+
+// 
+#navBar-top,
+#navBar-bot {
+    box-sizing: border-box;
+    padding: 7.5px;
+    flex: 1;
+}
+
+#navBar-top {
+    @include shared.flex-col-sta;
+}
+
+#ico {
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    @include shared.flex-row-cen;
+    border-radius: 999px;
+}
+
+#in-ico {
+    width: 46px;
+    height: 46px;
+    background-color: white;
+    border-radius: 999px;
+}
+
+// 
+// 
+#navBar-bot {
+    @include shared.flex-col-end;
+}
+
+// 
+// 
