@@ -1,5 +1,5 @@
 @import url("https://css.gg/c");
-@import url("https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900|Roboto+Slab:400,500,600,700,800,900|Roboto:400,500,700,900&display=swap");
 #content {
   width: 100%;
   height: 100%;
@@ -67,6 +67,119 @@
 }
 #navigation #navCont div i {
   color: #fdfdfd;
+}
+
+#infos {
+  width: 100%;
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#infos div {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 20px;
+}
+#infos div .infos-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: #1b1b1b;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+}
+#infos div .infos-title + * {
+  height: 100%;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+#infos div #infos-desc-cont {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+}
+#infos div #infos-details-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+}
+#infos div #infos-details-cont div {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-items: center;
+  flex: 0;
+  margin-bottom: 10px;
+  font-family: "Roboto", sans-serif;
+  color: #1b1b1b;
+}
+#infos div #infos-details-cont div .infos-details-title {
+  font-size: 24px;
+  font-weight: 800;
+}
+#infos div #infos-details-cont div .infos-details-det {
+  font-size: 18px;
+  margin-left: 10px;
+}
+#infos div #infos-price-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 0;
+  padding: 0;
+  padding-right: 50px;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+#infos div #infos-price-cont #infos-price-amount {
+  color: #1b1b1b;
+  font-size: 35px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+#infos div #infos-price-cont #infos-price-btn {
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #fdfdfd;
+  background-color: #1b1b1b;
+  font-size: 25px;
+  padding: 7.5px 20px;
+  margin-left: auto;
+  cursor: pointer;
+  user-select: none;
+}
+#infos div #infos-price-cont #infos-price-btn:hover {
+  background-color: #303030;
+}
+#infos div #infos-images-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+}
+#infos div #infos-images-cont div {
+  flex: 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+#infos div #infos-images-cont .infos-img {
+  width: 75px;
+  height: 75px;
+  background-color: #1b1b1b;
 }
 
 /*# sourceMappingURL=galerie.css.map */

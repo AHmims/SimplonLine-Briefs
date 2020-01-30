@@ -1,5 +1,5 @@
 @import url("https://css.gg/c");
-@import url("https://fonts.googleapis.com/css?family=Lato|Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900|Roboto+Slab:400,500,600,700,800,900|Roboto:400,500,700,900&display=swap");
 body,
 html {
   width: 100%;
@@ -10,6 +10,7 @@ html {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  align-items: flex-start;
 }
 
 #navBar {
@@ -186,4 +187,4 @@ html {
   }
 }
 
-/*# sourceMappingURL=navBar.css.map */
+/*# sourceMappingURL=navbar.css.map */
