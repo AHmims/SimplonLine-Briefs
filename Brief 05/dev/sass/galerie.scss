@@ -81,6 +81,7 @@
     width: 100%;
     flex: auto;
     @include shared.flex-row-sta;
+    overflow: scroll;
 
     div {
         flex: 1;
@@ -209,5 +210,62 @@
 
 // 
 // 
+// 
+// 
+@media screen and (max-width:1700px) {
+    #infos-price-cont {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    #infos-price-btn {
+        margin-left: 0 !important;
+        margin-top: 10px;
+    }
+}
+
+// 
+@media screen and (max-width:1209px) {
+    #landing {
+        height: 650px;
+    }
+
+}
+
+// 
+// 
+@media screen and (max-width:500px) {
+    #navBar {
+        position: unset;
+    }
+
+    #landing {
+        height: 500px;
+        background-position: center;
+        background-position: center;
+    }
+
+    #landing-title {
+        position: absolute;
+        margin-top: 477px;
+        color: colors.$black;
+        font-size: 50px;
+    }
+
+    #navigation {
+        padding-right: 0;
+    }
+
+    // 
+    #infos {
+        flex-direction: column;
+
+        div {
+            width: 100%;
+            height: unset;
+        }
+    }
+}
+
 // 
 // 
