@@ -1,0 +1,276 @@
+@import url("https://css.gg/c");
+@import url("https://fonts.googleapis.com/css?family=Work+Sans|Kelly+Slab|Zilla+Slab+Highlight|Mukta&display=swap");
+body,
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url("../img/space.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: unset;
+}
+
+#navBar {
+  width: 100vw;
+  height: 60px;
+  border-bottom: 1px solid white;
+  flex: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+  align-items: center;
+}
+#navBar #navBar-Left,
+#navBar #navBar-Right {
+  flex: 1;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 25px;
+}
+#navBar #navBar-Left a,
+#navBar #navBar-Right a {
+  text-decoration: none;
+  color: #fff;
+}
+#navBar #navBar-Left {
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+  align-items: center;
+}
+#navBar #navBar-Left a .gg-edit-highlight {
+  --ggs: 1.5;
+}
+#navBar #navBar-Left a:last-of-type {
+  margin-left: 15px;
+}
+#navBar #navBar-Right {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: unset;
+  align-items: center;
+}
+#navBar #navBar-Right a {
+  margin-left: 20px;
+  font-family: "Mukta", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+#navBar #navBar-Right a div {
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+  align-items: center;
+}
+#navBar #navBar-Right a div i {
+  margin-right: 7.5px;
+}
+
+#content {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+  align-items: unset;
+  flex: auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.sections {
+  flex: none;
+  width: 100vw;
+  border-right: 1px solid white;
+}
+.sections:first-of-type {
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+  align-items: unset;
+}
+.sections:first-of-type #galerie-preview {
+  flex: 1;
+  background-image: url("../img/shape2.png");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position-y: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.sections:first-of-type #galerie-preview #galerie-preview-planet {
+  width: 70%;
+  height: 70%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.sections:first-of-type #galerie-content #galerie-images {
+  width: 70%;
+  height: 250px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.sections:first-of-type #galerie-content #galerie-images .galerie-images-img {
+  border: 1px solid white;
+  flex: 1;
+  height: 100%;
+  transform: skew(-15deg);
+  background-position: 90%;
+  background-size: 250%;
+  filter: brightness(0.5);
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+.sections:first-of-type #galerie-content #galerie-images .galerie-images-img:hover {
+  background-size: 270%;
+  filter: brightness(0.75);
+}
+.sections:first-of-type #galerie-content #galerie-navigation {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: unset;
+  align-items: unset;
+  box-sizing: border-box;
+  padding-right: 20%;
+  margin-top: 15px;
+}
+.sections:first-of-type #galerie-content #galerie-navigation span {
+  color: black;
+  background-color: white;
+  padding: 0 20px;
+  padding-bottom: 15px;
+  transform: skew(-15deg);
+  font-size: 100px;
+  line-height: 50px;
+  font-family: "Kelly Slab", cursive;
+  user-select: none;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+.sections:first-of-type #galerie-content #galerie-navigation span:hover {
+  background-color: #ebebeb;
+}
+.sections:first-of-type #galerie-content #galerie-desc {
+  box-sizing: border-box;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: unset;
+}
+.sections:first-of-type #galerie-content #galerie-desc #galerie-desc-title {
+  font-family: "Zilla Slab Highlight", cursive;
+  font-size: 100px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.sections:first-of-type #galerie-content #galerie-desc #galerie-desc-txt {
+  font-family: "Kelly Slab", cursive;
+  color: #fff;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  font-size: 17px;
+}
+.sections:first-of-type #galerie-content #galerie-desc #galerie-desc-details {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: unset;
+}
+.sections:first-of-type #galerie-content #galerie-desc #galerie-desc-details .galerie-desc-det {
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.sections:first-of-type #galerie-content #galerie-desc #galerie-desc-details .galerie-desc-det span {
+  font-family: "Kelly Slab", cursive;
+  color: #fff;
+  font-size: 18px;
+}
+.sections:first-of-type #galerie-content #galerie-desc #galerie-desc-details .galerie-desc-det span:first-of-type {
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.sections:first-of-type #galerie-content #galerie-desc #galerie-desc-details .galerie-desc-det span:last-of-type {
+  margin-left: 7.5px;
+  padding: 2px 5px;
+  background-color: #fff;
+  color: #000;
+  user-select: none;
+}
+.sections:first-of-type #galerie-content #galerie-reserve {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: unset;
+  align-items: unset;
+  box-sizing: border-box;
+  padding-left: 50px;
+  margin-top: 50px;
+}
+.sections:first-of-type #galerie-content #galerie-reserve #galerie-reserve-btn {
+  margin-right: 25px;
+  flex: none;
+  font-family: "Kelly Slab", cursive;
+  font-size: 30px;
+  background-color: #fff;
+  padding: 10px 20px;
+  width: fit-content;
+  text-transform: uppercase;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+.sections:first-of-type #galerie-content #galerie-reserve #galerie-reserve-btn:hover {
+  background-color: #ebebeb;
+}
+.sections:first-of-type #galerie-content {
+  flex: 1;
+}
+
+@media screen and (max-width: 680px) {
+  #navBar-Right a div i {
+    margin: 0;
+  }
+  #navBar-Right a div span {
+    display: none;
+  }
+}
+::-webkit-scrollbar {
+  height: 7.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=main.css.map */

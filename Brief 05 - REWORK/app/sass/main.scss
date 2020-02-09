@@ -1,0 +1,319 @@
+@use 'shared';
+
+// 
+body,
+html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    // 
+    // background-color: purple;
+}
+
+body {
+    background-image: url('../img/space.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+// 
+#container {
+    width: 100vw;
+    height: 100vh;
+    // 
+    // background-color: shared.$black;
+    @include shared.flex(column, unset, unset);
+}
+
+// 
+#navBar {
+    width: 100vw;
+    height: 60px;
+    border-bottom: 1px solid white;
+    // 
+    // position: fixed;
+    flex: none;
+    // 
+    @include shared.flex(row, unset, center);
+
+    // 
+    #navBar-Left,
+    #navBar-Right {
+        flex: 1;
+        height: 100%;
+        // 
+        box-sizing: border-box;
+        padding: 0 25px;
+
+        // 
+        a {
+            text-decoration: none;
+            color: shared.$white;
+        }
+    }
+
+    #navBar-Left {
+        @include shared.flex(row, unset, center);
+
+        a {
+            .gg-edit-highlight {
+                --ggs: 1.5;
+            }
+
+            &:last-of-type {
+                margin-left: 15px;
+            }
+        }
+    }
+
+    #navBar-Right {
+        @include shared.flex(row-reverse, unset, center);
+
+        a {
+            margin-left: 20px;
+            font-family: 'Mukta', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+
+            // 
+            div {
+                @include shared.flex(row, unset, center);
+
+                i {
+                    margin-right: 7.5px;
+                }
+            }
+        }
+    }
+}
+
+// 
+#content {
+    width: 100vw;
+    // height: 100vh;
+    @include shared.flex(row, unset, unset);
+    // 
+    flex: auto;
+    overflow-x: auto;
+    // overflow-x: hidden;
+    scroll-behavior: smooth;
+
+
+
+    // background-color: purple;
+}
+
+.sections {
+    // height: 100vh;
+    flex: none;
+    width: 100vw;
+    border-right: 1px solid white;
+
+    // background-color: red;
+    // GALLERY
+    &:first-of-type {
+        // background-color: red;
+        @include shared.flex(row, unset, unset);
+
+        #galerie-preview {
+            // background-color: red;
+            flex: 1;
+            background-image: url('../img/shape2.png');
+            background-repeat: no-repeat;
+            // 
+            // filter: invert(1);
+            background-size: 70%;
+            background-position-y: center;
+            // 
+            @include shared.flex(row, center, center);
+
+            #galerie-preview-planet {
+                width: 70%;
+                height: 70%;
+                // background-image: url('../img/earth.png');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+
+        #galerie-content {
+            #galerie-images {
+                width: 70%;
+                height: 250px;
+                margin: 0 auto;
+                @include shared.flex(row, center, center);
+
+                .galerie-images-img {
+                    border: 1px solid white;
+                    flex: 1;
+                    // flex: none;
+                    // width: 200px;
+                    height: 100%;
+                    transform: skew(-15deg);
+                    background-position: 90%;
+                    background-size: 250%;
+                    filter: brightness(0.5);
+                    transition: all 200ms ease-in-out;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-size: 270%;
+                        filter: brightness(0.75);
+                    }
+                }
+            }
+
+            #galerie-navigation {
+                @include shared.flex(row-reverse, unset, unset);
+                box-sizing: border-box;
+                padding-right: 20%;
+                margin-top: 15px;
+
+                span {
+                    color: black;
+                    background-color: white;
+                    padding: 0 20px;
+                    padding-bottom: 15px;
+                    transform: skew(-15deg);
+                    font-size: 100px;
+                    line-height: 50px;
+                    font-family: 'Kelly Slab', cursive;
+                    user-select: none;
+                    transition: all 200ms ease-in-out;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #ebebeb;
+                    }
+                }
+            }
+
+            #galerie-desc {
+                // margin-top: 75px;
+                box-sizing: border-box;
+                padding-left: 50px;
+                @include shared.flex(column, unset, unset);
+
+                #galerie-desc-title {
+                    font-family: 'Zilla Slab Highlight', cursive;
+                    font-size: 100px;
+                    color: shared.$white;
+                    text-transform: uppercase;
+                }
+
+                #galerie-desc-txt {
+                    font-family: 'Kelly Slab', cursive;
+                    color: shared.$white;
+                    margin-top: 10px;
+                    letter-spacing: 0.5px;
+                    font-size: 17px;
+                }
+
+                #galerie-desc-details {
+                    margin-top: 10px;
+                    @include shared.flex(column, unset, unset);
+
+                    .galerie-desc-det {
+                        @include shared.flex(row, unset, center);
+                        margin-bottom: 5px;
+
+                        span {
+                            font-family: 'Kelly Slab', cursive;
+                            color: shared.$white;
+                            font-size: 18px;
+
+                            &:first-of-type {
+                                font-size: 24px;
+                                text-transform: uppercase;
+                                text-decoration: underline;
+                            }
+
+                            &:last-of-type {
+                                margin-left: 7.5px;
+                                padding: 2px 5px;
+                                background-color: shared.$white;
+                                color: shared.$black;
+                                user-select: none;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+
+            #galerie-reserve {
+                @include shared.flex(row-reverse, unset, unset);
+                box-sizing: border-box;
+                padding-left: 50px;
+                margin-top: 50px;
+
+                #galerie-reserve-btn {
+                    margin-right: 25px;
+                    flex: none;
+                    font-family: 'Kelly Slab', cursive;
+                    font-size: 30px;
+                    // color: transparent;
+                    background-color: shared.$white;
+                    padding: 10px 20px;
+                    width: fit-content;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    user-select: none;
+                    cursor: pointer;
+                    transition: all 200ms ease-in-out;
+
+                    &:hover {
+                        background-color: #ebebeb;
+                    }
+                }
+            }
+        }
+
+        #galerie-content {
+            // background-color: rgb(34, 37, 34);
+            flex: 1;
+        }
+    }
+}
+
+// 
+// 
+// 
+@media screen and (max-width:680px) {
+    #navBar-Right {
+        a {
+            div {
+                i {
+                    margin: 0;
+                }
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+::-webkit-scrollbar {
+    height: 7.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: shared.$white;
+    border-radius: 10px;
+}
