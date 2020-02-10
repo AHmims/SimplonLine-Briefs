@@ -88,12 +88,14 @@ body {
   flex: auto;
   overflow-x: auto;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
 }
 
 .sections {
   flex: none;
   width: 100vw;
   border-right: 1px solid white;
+  scroll-snap-align: center;
 }
 .sections:first-of-type {
   display: flex;
@@ -219,6 +221,7 @@ body {
   background-color: #fff;
   color: #000;
   user-select: none;
+  text-transform: uppercase;
 }
 .sections:first-of-type #galerie-content #galerie-reserve {
   display: flex;
@@ -248,6 +251,73 @@ body {
 }
 .sections:first-of-type #galerie-content {
   flex: 1;
+}
+.sections:last-of-type {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.sections:last-of-type #form-inscription {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: unset;
+}
+.sections:last-of-type #form-inscription .form-title {
+  font-family: "Zilla Slab Highlight", cursive;
+  font-size: 130px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.sections:last-of-type #form-inscription .form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: unset;
+  margin-bottom: 10px;
+  font-family: "Kelly Slab", cursive;
+}
+.sections:last-of-type #form-inscription .form-row .form-row-title {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 40px;
+}
+.sections:last-of-type #form-inscription .form-row .form-row-input {
+  width: 300px;
+  margin-left: auto;
+  transform: skewX(-15deg);
+  background: transparent;
+  border: none;
+  padding: 0;
+  outline: none;
+  border: 2px solid #fff;
+  padding-left: 5px;
+  color: #fff;
+  font-size: 18px;
+}
+.sections:last-of-type #form-inscription .form-row:last-of-type {
+  flex-direction: row-reverse;
+  margin-top: 15px;
+}
+.sections:last-of-type #form-inscription .form-row:last-of-type span {
+  transform: skewX(-15deg);
+  user-select: none;
+  cursor: pointer;
+  font-size: 45px;
+  padding: 5px 10px;
+}
+.sections:last-of-type #form-inscription .form-row:last-of-type span:first-of-type {
+  color: #000;
+  background-color: #fff;
+}
+.sections:last-of-type #form-inscription .form-row:last-of-type span:last-of-type {
+  color: #fff;
+  border: 2px solid #fff;
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 680px) {

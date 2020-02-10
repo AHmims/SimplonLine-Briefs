@@ -98,6 +98,7 @@ body {
     overflow-x: auto;
     // overflow-x: hidden;
     scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
 
 
 
@@ -109,6 +110,7 @@ body {
     flex: none;
     width: 100vw;
     border-right: 1px solid white;
+    scroll-snap-align: center;
 
     // background-color: red;
     // GALLERY
@@ -236,6 +238,7 @@ body {
                                 background-color: shared.$white;
                                 color: shared.$black;
                                 user-select: none;
+                                text-transform: uppercase;
                             }
 
                         }
@@ -275,6 +278,87 @@ body {
         #galerie-content {
             // background-color: rgb(34, 37, 34);
             flex: 1;
+        }
+    }
+
+    //Reservation
+    &:nth-of-type(2) {}
+
+    //INSCRIPTION
+    &:last-of-type {
+        @include shared.flex(row, center, center);
+
+        // 
+        #form-inscription {
+            width: fit-content;
+            height: fit-content;
+            @include shared.flex(column, unset, unset);
+
+            .form-title {
+                font-family: "Zilla Slab Highlight", cursive;
+                font-size: 130px;
+                text-transform: uppercase;
+                color: shared.$white;
+                margin-bottom: 20px;
+                // font-style: italic;
+            }
+
+            .form-row {
+                @include shared.flex(row, flex-start, unset);
+                margin-bottom: 10px;
+                font-family: "Kelly Slab", cursive;
+
+                .form-row-title {
+                    // font-family: "Kelly Slab", cursive;
+                    color: shared.$white;
+                    // text-transform: uppercase;
+                    text-decoration: underline;
+                    // background-color: shared.$white;
+                    // padding: 5px 10px;
+                    font-size: 40px;
+                }
+
+                .form-row-input {
+                    width: 300px;
+                    margin-left: auto;
+                    transform: skewX(-15deg);
+                    background: transparent;
+                    border: none;
+                    padding: 0;
+                    // 
+                    outline: none;
+                    border: 2px solid shared.$white;
+                    padding-left: 5px;
+                    // font-family: "Kelly Slab", cursive;
+                    color: shared.$white;
+                    font-size: 18px;
+                }
+
+                &:last-of-type {
+                    flex-direction: row-reverse;
+                    margin-top: 15px;
+
+                    // 
+                    span {
+                        transform: skewX(-15deg);
+                        user-select: none;
+                        cursor: pointer;
+                        font-size: 45px;
+                        padding: 5px 10px;
+
+                        &:first-of-type {
+                            color: shared.$black;
+                            background-color: shared.$white;
+                        }
+
+                        &:last-of-type {
+                            color: shared.$white;
+                            border: 2px solid shared.$white;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
