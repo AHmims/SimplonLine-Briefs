@@ -1,11 +1,4 @@
 let images = document.getElementsByClassName('galerie-images-img');
-const _IMAGES_NAMES = [
-    "earth",
-    "moon",
-    "404",
-    "mars",
-    "namek-flip"
-]
 let lorem = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, amet! Quis eius consequatur, natus quam illum sunt ad. Eum placeat itaque enim distinctio? Suscipit neque ad atque blanditiis officia nemo omnis ratione eveniet cupiditate fugit voluptatum odit eius, fuga maiores.";
 
 const _PLANETS = [{
@@ -66,6 +59,16 @@ document.getElementById('navigation-back').addEventListener('click', () => {
         pos = images.length - 1;
     switchData();
 });
+// Reservé
+document.getElementById('galerie-reserve-btn').addEventListener('click', () => {
+    let scrollW = document.getElementById('content').scrollWidth / 3;
+    if (sessionStorage.getItem("user-auth-np"))
+        document.getElementById('content').scrollTo(scrollW * 2, 0);
+    else
+        document.getElementById('content').scrollTo(scrollW * 3, 0);
+
+});
+// 
 // 
 // 
 function switchData() {
@@ -87,4 +90,18 @@ function switchData() {
     document.getElementsByClassName('galerie-desc-det')[0].lastElementChild.innerText = _PLANETS[pos].population;
     document.getElementsByClassName('galerie-desc-det')[1].lastElementChild.innerText = _PLANETS[pos].polution;
     document.getElementsByClassName('galerie-desc-det')[2].lastElementChild.innerText = _PLANETS[pos].price;
+    //
+    //
+    document.getElementsByClassName('form-res-row-preview')[0].style.backgroundImage = `url("./app/img/${_PLANETS[pos].path}.png")`;
+    if (_PLANETS[pos].path == "earth") {
+        for (let i = 0; i < 2; i++) {
+            document.getElementsByClassName('form-res-row-log-element-price')[i].innerText = 3000 * (i + 1) + "-DH";
+            document.getElementsByClassName('form-res-row-log-element-img')[i].style.backgroundImage = `url("./app/img/earth/log${i+1}.jpg")`;
+        }
+    } else {
+        for (let i = 0; i < 2; i++) {
+            document.getElementsByClassName('form-res-row-log-element-price')[i].innerText = 40000 * (i + 1) + "-DH";
+            document.getElementsByClassName('form-res-row-log-element-img')[i].style.backgroundImage = `url("./app/img/other/log${i+1}.jpg")`;
+        }
+    }
 }

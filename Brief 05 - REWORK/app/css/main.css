@@ -8,6 +8,12 @@ html {
   margin: 0;
 }
 
+*::selection {
+  color: #000;
+  background: #fff;
+  /* WebKit/Blink Browsers */
+}
+
 body {
   background-image: url("../img/space.jpg");
   background-position: center;
@@ -252,6 +258,137 @@ body {
 .sections:first-of-type #galerie-content {
   flex: 1;
 }
+.sections:nth-of-type(2) {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.sections:nth-of-type(2) #form-reservation {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: unset;
+  height: 850px;
+  width: 870px;
+  box-sizing: border-box;
+  padding-right: 35px;
+  overflow-y: scroll;
+}
+.sections:nth-of-type(2) #form-reservation .form-title {
+  font-family: "Zilla Slab Highlight", cursive;
+  font-size: 130px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 20px;
+  position: sticky;
+  top: -5px;
+  z-index: 5;
+  text-shadow: 0px 5px 20px #000;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: unset;
+  margin-bottom: 10px;
+  font-family: "Kelly Slab", cursive;
+  align-items: center;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row .form-res-row-title {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 40px;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row .form-res-row-preview {
+  width: 450px;
+  height: 200px;
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid #fff;
+  background-image: url("../img/earth.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: skewX(-15deg);
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row .form-res-row-log {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row .form-res-row-log .form-res-row-log-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: center;
+  width: 275px;
+  height: 200px;
+  border: 1px solid #fff;
+  transform: skewX(-15deg);
+  transition: 200ms all ease-in-out;
+  cursor: pointer;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row .form-res-row-log .form-res-row-log-element:first-of-type {
+  margin-right: 5px;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row .form-res-row-log .form-res-row-log-element div {
+  width: 100%;
+  height: 75%;
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row .form-res-row-log .form-res-row-log-element span {
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  user-select: none;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row .form-res-row-data {
+  width: 300px;
+  margin-left: auto;
+  transform: skewX(-15deg);
+  background: transparent;
+  border: none;
+  padding: 0;
+  outline: none;
+  border: 2px solid #fff;
+  padding-left: 5px;
+  color: #fff;
+  font-size: 18px;
+  height: 44px;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row .form-res-price {
+  margin-left: auto;
+  text-decoration: none;
+  user-select: none;
+  text-transform: uppercase;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row:last-of-type {
+  flex-direction: row-reverse;
+  margin-top: 15px;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row:last-of-type span {
+  transform: skewX(-15deg);
+  user-select: none;
+  cursor: pointer;
+  font-size: 45px;
+  padding: 5px 10px;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row:last-of-type span:first-of-type {
+  color: #000;
+  background-color: #fff;
+}
+.sections:nth-of-type(2) #form-reservation .form-res-row:last-of-type span:last-of-type {
+  color: #fff;
+  border: 2px solid #fff;
+  margin-right: 10px;
+}
 .sections:last-of-type {
   display: flex;
   flex-direction: row;
@@ -330,6 +467,7 @@ body {
 }
 ::-webkit-scrollbar {
   height: 7.5px;
+  width: 7.5px;
 }
 
 /* Track */
@@ -339,8 +477,12 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
 }
 
 /*# sourceMappingURL=main.css.map */

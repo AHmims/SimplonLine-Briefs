@@ -24,19 +24,19 @@
                 </a>
             </div>
             <div id="navBar-Right">
-                <a href="#">
+                <a href="#inscription">
                     <div>
                         <i class="gg-profile"></i>
                         <span>Inscription</span>
                     </div>
                 </a>
-                <a href="#">
+                <a href="#reservation">
                     <div>
                         <i class="gg-shopping-bag"></i>
                         <span>Reservations</span>
                     </div>
                 </a>
-                <a href="#">
+                <a href="#galerie">
                     <div>
                         <i class="gg-image"></i>
                         <span>Galerie</span>
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div id="content">
-            <div class="sections">
+            <div class="sections" id="galerie">
                 <div id="galerie-preview">
                     <div id="galerie-preview-planet" style="background-image: url('./app/img/earth.png');"></div>
                 </div>
@@ -91,12 +91,71 @@
                     </div>
                 </div>
             </div>
-            <div class="sections">
-                <div>
-
+            <div class="sections" id="reservation">
+                <div id="form-reservation">
+                    <span class="form-title">Reservation</span>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Planet :</span>
+                        <div class="form-res-row-preview"></div>
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">logement :</span>
+                        <div class="form-res-row-log">
+                            <label for="rad-log-1">
+                                <div class="form-res-row-log-element">
+                                    <div class="form-res-row-log-element-img"
+                                        style="background-image: url('./app/img/earth/log1.jpg');"></div>
+                                    <span class="form-res-row-log-element-price">3000-dh</span>
+                                    <input type="radio" name="logement" id="rad-log-1">
+                                </div>
+                            </label>
+                            <label for="rad-log-2">
+                                <div class="form-res-row-log-element">
+                                    <div class="form-res-row-log-element-img"
+                                        style="background-image: url('./app/img/earth/log2.jpg');"></div>
+                                    <span class="form-res-row-log-element-price">5000-dh</span>
+                                    <input type="radio" name="logement" id="rad-log-2" checked>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Nom & Prenom :</span>
+                        <input type="text" class="form-res-row-data" disabled />
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">E-Mail :</span>
+                        <input type="text" class="form-res-row-data" disabled />
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Date Debut :</span>
+                        <input type="date" class="form-res-row-data" />
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Date Fin :</span>
+                        <input type="date" class="form-res-row-data" />
+                    </div>
+                    <hr>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Prix :</span>
+                        <span class="form-res-row-title form-res-price">0000-DH</span>
+                    </div>
+                    <hr>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Numero de CB :</span>
+                        <input type="text" class="form-res-row-data" />
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">CCV :</span>
+                        <input type="text" class="form-res-row-data" />
+                    </div>
+                    <div class="form-res-row">
+                        <span id="form-btn-main">Reserver</span>
+                        <span id="form-btn-sec">Annuler</span>
+                    </div>
                 </div>
             </div>
-            <div class="sections">
+            <div class="sections" id="inscription">
                 <div id="form-inscription">
                     <span class="form-title">Inscription</span>
                     <div class="form-row">

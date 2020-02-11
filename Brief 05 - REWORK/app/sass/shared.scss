@@ -11,3 +11,39 @@ $white:#fff;
     justify-content: $justify;
     align-items: $align;
 }
+
+// 
+@mixin form-title {
+    font-family: "Zilla Slab Highlight", cursive;
+    font-size: 130px;
+    text-transform: uppercase;
+    color: $white;
+}
+
+@mixin form-row {
+    @include flex(row, flex-start, unset);
+    margin-bottom: 10px;
+    font-family: "Kelly Slab", cursive;
+}
+
+@mixin form-row-title {
+    color: $white;
+    text-decoration: underline;
+    font-size: 40px;
+}
+
+@mixin form-input {
+    width: 300px;
+    margin-left: auto;
+    transform: skewX(-15deg);
+    background: transparent;
+    border: none;
+    padding: 0;
+    // 
+    outline: none;
+    border: 2px solid $white;
+    padding-left: 5px;
+    color: $white;
+    font-size: 18px;
+
+}
