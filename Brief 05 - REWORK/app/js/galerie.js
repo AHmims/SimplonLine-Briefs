@@ -62,11 +62,17 @@ document.getElementById('navigation-back').addEventListener('click', () => {
 // Reservé
 document.getElementById('galerie-reserve-btn').addEventListener('click', () => {
     let scrollW = document.getElementById('content').scrollWidth / 3;
-    if (sessionStorage.getItem("user-auth-np"))
-        document.getElementById('content').scrollTo(scrollW * 2, 0);
-    else
-        document.getElementById('content').scrollTo(scrollW * 3, 0);
+    if (sessionStorage.getItem("user-auth-np")) {
+        document.getElementById('content').scrollTo((scrollW * 2) - (scrollW / 2), 0);
+        // 
+        document.getElementById('form-res-row-data-np').value = sessionStorage.getItem("user-auth-np");
+        document.getElementById('form-res-row-data-em').value = sessionStorage.getItem("user-auth-email");
+        // 
+        // Second radio btn is selected by default
+        document.getElementsByClassName('form-res-row-log-element-price')[1].innerText;
 
+    } else
+        document.getElementById('content').scrollTo(scrollW * 3, 0);
 });
 // 
 // 
@@ -103,5 +109,15 @@ function switchData() {
             document.getElementsByClassName('form-res-row-log-element-price')[i].innerText = 40000 * (i + 1) + "-DH";
             document.getElementsByClassName('form-res-row-log-element-img')[i].style.backgroundImage = `url("./app/img/other/log${i+1}.jpg")`;
         }
+    }
+}
+// 
+// 
+// 
+// Lowercase to Uppercase
+const _INPUTS = document.querySelectorAll('input[type="text"]');
+for (let i = 0; i < _INPUTS.length; i++) {
+    _INPUTS[i].onkeyup = () => {
+        _INPUTS[i].value = _INPUTS[i].value.toUpperCase();
     }
 }

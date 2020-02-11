@@ -13,3 +13,5 @@ document.addEventListener('mousemove', (e) => {
     document.body.style.backgroundPositionX = `${newvalueX*2}px`;
     document.body.style.backgroundPositionY = `${newvalueY*2}px`;
 });
+// 
+// 

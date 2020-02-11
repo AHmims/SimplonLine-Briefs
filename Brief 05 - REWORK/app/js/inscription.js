@@ -59,11 +59,15 @@ document.getElementById('form-btn-main').addEventListener('click', () => {
             sessionStorage.setItem("user-auth-np", _VALUES[1].value);
             sessionStorage.setItem("user-auth-email", _VALUES[2].value);
             // 
+            document.getElementById('form-res-row-data-np').value = sessionStorage.getItem("user-auth-np");
+            document.getElementById('form-res-row-data-em').value = sessionStorage.getItem("user-auth-email");
+            // 
             document.getElementById('content').scrollTo(0, 0);
         }
     }
 });
 // 
 function showErrMsg(msg) {
-    alert(msg);
+    // alert(msg);
+    console.log(`%c${msg}`, "background:red;color:white;padding:5px;border-radius:5px;");
 }
