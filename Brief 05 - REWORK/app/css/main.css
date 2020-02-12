@@ -263,6 +263,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .sections:nth-of-type(2) #form-reservation {
   width: fit-content;
@@ -307,6 +308,11 @@ body {
   color: #fff;
   text-decoration: underline;
   font-size: 40px;
+}
+@media screen and (max-width: 530px) {
+  .sections:nth-of-type(2) #form-reservation .form-res-row .form-res-row-title {
+    font-size: 30px;
+  }
 }
 .sections:nth-of-type(2) #form-reservation .form-res-row .form-res-row-preview {
   width: 450px;
@@ -395,6 +401,44 @@ body {
   border: 2px solid #fff;
   margin-right: 10px;
 }
+.sections:nth-of-type(2) #section2-alerts {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.sections:nth-of-type(2) #section2-alerts #section2-confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: unset;
+  background-color: #fff;
+  transform: skew(-15deg);
+  width: 50%;
+  height: 200px;
+  box-sizing: border-box;
+  padding: 20px;
+  font-family: "Kelly Slab", cursive;
+  font-size: 40px;
+  color: #000;
+}
+.sections:nth-of-type(2) #section2-alerts #section2-confirmation span {
+  flex: 1;
+}
+.sections:nth-of-type(2) #section2-alerts #section2-confirmation div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.sections:nth-of-type(2) #section2-alerts #section2-confirmation div span {
+  flex: 0;
+}
 .sections:last-of-type {
   display: flex;
   flex-direction: row;
@@ -434,6 +478,11 @@ body {
   color: #fff;
   text-decoration: underline;
   font-size: 40px;
+}
+@media screen and (max-width: 530px) {
+  .sections:last-of-type #form-inscription .form-row .form-row-title {
+    font-size: 30px;
+  }
 }
 .sections:last-of-type #form-inscription .form-row .form-row-input {
   width: 300px;
@@ -547,6 +596,10 @@ body {
     padding: 0 !important;
   }
 
+  .galerie-images-img {
+    background-repeat: no-repeat;
+  }
+
   #galerie-images {
     width: 90% !important;
   }
@@ -560,7 +613,26 @@ body {
   }
 
   #form-reservation {
-    padding-right: 0 !important;
+    padding-right: 25 !important;
+    padding-left: 10px;
+  }
+
+  .form-res-row-preview {
+    width: 300px !important;
+    height: 150px !important;
+  }
+
+  .form-res-row-log-element {
+    width: 125px !important;
+    height: 125px !important;
+  }
+
+  .form-res-row-data {
+    width: 170px !important;
+  }
+
+  .form-row-input {
+    width: 170px !important;
   }
 }
 ::-webkit-scrollbar {

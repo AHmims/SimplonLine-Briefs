@@ -36,6 +36,10 @@ $white:#fff;
     color: $white;
     text-decoration: underline;
     font-size: 40px;
+
+    @media screen and (max-width:530px) {
+        font-size: 30px;
+    }
 }
 
 @mixin form-input {

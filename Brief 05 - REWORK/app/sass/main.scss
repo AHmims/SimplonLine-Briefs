@@ -292,6 +292,7 @@ body {
     //Reservation
     &:nth-of-type(2) {
         @include shared.flex(row, center, center);
+        position: relative;
 
         #form-reservation {
             width: fit-content;
@@ -428,6 +429,47 @@ body {
                     }
                 }
 
+            }
+        }
+
+        // 
+        // 
+        // 
+        #section2-alerts {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            z-index: 10;
+            // 
+            // 
+            @include shared.flex(row, center, center);
+
+            // 
+            #section2-confirmation {
+                @include shared.flex(column, unset, unset);
+                background-color: shared.$white;
+                transform: skew(-15deg);
+                width: 50%;
+                height: 200px;
+                box-sizing: border-box;
+                padding: 20px;
+                // 
+                font-family: "Kelly Slab", cursive;
+                font-size: 40px;
+                color: shared.$black;
+
+                span {
+                    flex: 1;
+                }
+
+                div {
+                    @include shared.flex(row, flex-end, center);
+
+                    span {
+                        flex: 0;
+                    }
+                }
             }
         }
     }
@@ -618,6 +660,10 @@ body {
     }
 
     // 
+    .galerie-images-img {
+        background-repeat: no-repeat;
+    }
+
     #galerie-images {
         width: 90% !important;
     }
@@ -637,7 +683,30 @@ body {
     // 
     // 
     #form-reservation {
-        padding-right: 0 !important;
+        padding-right: 25 !important;
+        padding-left: 10px;
+    }
+
+    .form-res-row-preview {
+        width: 300px !important;
+        height: 150px !important;
+    }
+
+    .form-res-row-log-element {
+        width: 125px !important;
+        height: 125px !important;
+    }
+
+    .form-res-row-data {
+        width: 170px !important;
+    }
+
+    // 
+    // 
+    // 
+    // 
+    .form-row-input {
+        width: 170px !important;
     }
 }
 
