@@ -19,7 +19,7 @@ const _PLANETS = [{
     },
     {
         path: "404",
-        name: "Unknown Planet",
+        name: "Unknown",
         description: lorem,
         population: "???",
         polution: "???",
@@ -35,7 +35,7 @@ const _PLANETS = [{
     },
     {
         path: "namek-flip",
-        name: "Namek Planet",
+        name: "Namek",
         description: lorem,
         population: "100 person",
         polution: "0%",
@@ -69,12 +69,20 @@ document.getElementById('galerie-reserve-btn').addEventListener('click', () => {
         document.getElementById('form-res-row-data-em').value = sessionStorage.getItem("user-auth-email");
         // 
         // Second radio btn is selected by default
-        document.getElementsByClassName('form-res-row-log-element-price')[1].innerText;
+        priceUpdate(1);
 
     } else
         document.getElementById('content').scrollTo(scrollW * 3, 0);
 });
 // 
+function priceUpdate(index) {
+    let price = document.getElementsByClassName('form-res-row-log-element-price')[index].innerText;
+    price = parseInt(price.slice(0, price.search("-")));
+    // 
+    price += parseInt(_PLANETS[pos].price.slice(0, _PLANETS[pos].price.search(" ")));
+    // 
+    document.getElementsByClassName('form-res-price')[0].innerText = `${price}-DH`;
+}
 // 
 // 
 function switchData() {

@@ -8,8 +8,8 @@ document.addEventListener('mousemove', (e) => {
     var newvalueX = width * (pageX * -1) - movementStrength;
     var newvalueY = height * (pageY * -1) - movementStrength;
     // 
-    document.getElementById('galerie-preview-planet').style.backgroundPositionX = `${newvalueX}px`;
-    document.getElementById('galerie-preview-planet').style.backgroundPositionY = `${newvalueY}px`;
+    document.getElementById('galerie-preview-planet').style.backgroundPositionX = `${10 + newvalueX}px`;
+    document.getElementById('galerie-preview-planet').style.backgroundPositionY = `${10 + newvalueY}px`;
     document.body.style.backgroundPositionX = `${newvalueX*2}px`;
     document.body.style.backgroundPositionY = `${newvalueY*2}px`;
 });

@@ -124,8 +124,8 @@ body {
   width: 70%;
   height: 70%;
   background-position: center;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 .sections:first-of-type #galerie-content #galerie-images {
   width: 70%;
@@ -271,7 +271,7 @@ body {
   flex-direction: column;
   justify-content: unset;
   align-items: unset;
-  height: 850px;
+  height: 95%;
   width: 870px;
   box-sizing: border-box;
   padding-right: 35px;
@@ -463,6 +463,15 @@ body {
   }
   #navBar-Right a div span {
     display: none;
+  }
+}
+@media screen and (max-width: 1300px) {
+  #galerie-preview {
+    flex: 0.8 !important;
+    background-size: 100% !important;
+  }
+  #galerie-preview #galerie-preview-planet {
+    width: 90% !important;
   }
 }
 ::-webkit-scrollbar {

@@ -47,3 +47,11 @@ document.getElementById('form-btn-res-order').addEventListener('click', () => {
         console.log("%cIS GOOD", "background:green;color:white;padding:5px;border-radius:5px;");
     }
 });
+// 
+let radioSwitch = 1;
+document.getElementsByName('logement')[0].addEventListener('change', () => {
+    priceUpdate(0);
+});
+document.getElementsByName('logement')[1].addEventListener('change', () => {
+    priceUpdate(1);
+});
