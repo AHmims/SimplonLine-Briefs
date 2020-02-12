@@ -288,6 +288,12 @@ body {
   z-index: 5;
   text-shadow: 0px 5px 20px #000;
 }
+@media screen and (max-width: 530px) {
+  .sections:nth-of-type(2) #form-reservation .form-title {
+    font-size: 70px;
+    text-align: center;
+  }
+}
 .sections:nth-of-type(2) #form-reservation .form-res-row {
   display: flex;
   flex-direction: row;
@@ -410,6 +416,12 @@ body {
   color: #fff;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 530px) {
+  .sections:last-of-type #form-inscription .form-title {
+    font-size: 70px;
+    text-align: center;
+  }
+}
 .sections:last-of-type #form-inscription .form-row {
   display: flex;
   flex-direction: row;
@@ -466,12 +478,89 @@ body {
   }
 }
 @media screen and (max-width: 1300px) {
+  #galerie-images {
+    width: 80% !important;
+  }
+
   #galerie-preview {
     flex: 0.8 !important;
     background-size: 100% !important;
   }
   #galerie-preview #galerie-preview-planet {
     width: 90% !important;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .sections:first-of-type {
+    flex-direction: column;
+    position: relative;
+  }
+  .sections:first-of-type #galerie-preview {
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+  }
+  .sections:first-of-type #galerie-preview #galerie-preview-planet {
+    transform: rotate(-180deg);
+    height: 100%;
+    background-size: 90%;
+  }
+  .sections:first-of-type #galerie-navigation {
+    padding-left: 57px;
+    margin-bottom: 10px;
+    justify-content: flex-end !important;
+  }
+  .sections:first-of-type #galerie-desc-txt {
+    width: 50%;
+  }
+  .sections:first-of-type #galerie-reserve {
+    justify-content: flex-end !important;
+    margin-top: 20px !important;
+  }
+}
+@media screen and (max-width: 530px) {
+  #content {
+    flex-direction: column;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
+  #content .sections {
+    height: 100vh;
+    border-right: none;
+    border-bottom: 1px solid #fff;
+  }
+
+  #galerie-preview {
+    background-image: none !important;
+  }
+
+  #galerie-content div {
+    padding-left: 20px !important;
+  }
+  #galerie-content div .galerie-desc-det {
+    padding: 0 !important;
+  }
+  #galerie-content #galerie-desc-details {
+    padding: 0 !important;
+  }
+
+  #galerie-images {
+    width: 90% !important;
+  }
+
+  #galerie-desc-title {
+    font-size: 80px !important;
+  }
+
+  #galerie-desc-txt {
+    font-size: 15px !important;
+  }
+
+  #form-reservation {
+    padding-right: 0 !important;
   }
 }
 ::-webkit-scrollbar {
