@@ -422,7 +422,6 @@ body {
   background-color: #fff;
   transform: skew(-15deg);
   width: 50%;
-  height: 200px;
   box-sizing: border-box;
   padding: 20px;
   font-family: "Kelly Slab", cursive;
@@ -432,6 +431,9 @@ body {
 }
 .sections:nth-of-type(2) #section2-alerts #section2-confirmation span {
   flex: 1;
+}
+.sections:nth-of-type(2) #section2-alerts #section2-confirmation #section2-confirmation-form {
+  margin: 15px 0;
 }
 .sections:nth-of-type(2) #section2-alerts #section2-confirmation #section2-confirmation-btns {
   display: flex;
@@ -456,6 +458,7 @@ body {
   background-color: #000;
 }
 .sections:nth-of-type(2) #section2-alerts #section2-msgs {
+  text-transform: capitalize;
   display: none;
   align-self: flex-end;
   width: 50%;
@@ -565,6 +568,7 @@ body {
   pointer-events: none;
 }
 .sections:last-of-type #section3-alerts #section3-msgs {
+  text-transform: capitalize;
   align-self: flex-end;
   width: 50%;
   height: 75px;

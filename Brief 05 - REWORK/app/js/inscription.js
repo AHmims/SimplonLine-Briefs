@@ -61,7 +61,8 @@ document.getElementById('form-btn-main').addEventListener('click', () => {
         // 
         // 
         if (valide == true) {
-            alert('SHOW A SUCCES MESSAGE / POP UP HERE');
+            // alert('SHOW A SUCCES MESSAGE / POP UP HERE');
+            alert('Compte cree avec succes');
             sessionStorage.setItem("user-auth-np", _VALUES[1].value);
             sessionStorage.setItem("user-auth-email", _VALUES[2].value);
             // 

@@ -3,6 +3,7 @@ document.getElementsByClassName('form-res-row-data')[5].addEventListener('change
     if (e.target.value <= 0)
         e.target.value = 0;
     // 
+    document.getElementsByClassName('section2-confirmation-form-value')[3].innerText = e.target.value;
     priceUpdate(radioSwitch);
 });
 document.getElementById('form-btn-res-order').addEventListener('click', () => {
@@ -33,12 +34,15 @@ document.getElementById('form-btn-res-order').addEventListener('click', () => {
                 let resrevDate2 = new Date(_RES_INPUTS[4].value);
                 // Check with current Date
                 if (currentDate - resrevDate1 > 0) {
+
                     showErrMsg("Date error");
                 } else {
                     // If ordering date is bigger than staying date value
                     if (resrevDate1 - resrevDate2 > 0) {
                         showErrMsg("Date error");
                         valide = false;
+                    } else {
+                        document.getElementsByClassName('section2-confirmation-form-value')[2].innerText = (resrevDate2 - resrevDate1) / (1000 * 3600 * 24);
                     }
                 }
             } else {
@@ -79,7 +83,7 @@ document.getElementById('form-btn-res-order').addEventListener('click', () => {
         document.getElementById('section2-confirmation').style.display = "flex";
         // 
         // 
-
+        document.getElementsByClassName('section2-confirmation-form-value')[4].innerText = document.getElementsByClassName('form-res-price')[0].innerText;
         // 
         // 
         document.getElementById('section2-confirmation-valide').addEventListener('click', () => {
@@ -87,6 +91,8 @@ document.getElementById('form-btn-res-order').addEventListener('click', () => {
             // document.getElementById('section2-alerts').style.backgroundColor = "transparent";
             document.getElementById('section2-confirmation').style.display = "none";
             console.log("%cIS GOOD", "background:green;color:white;padding:5px;border-radius:5px;");
+            // 
+            alert("Planet Reservée");
         });
         document.getElementById('section2-confirmation-cancel').addEventListener('click', () => {
             document.getElementById('section2-alerts').style.display = "none";
@@ -107,10 +113,12 @@ document.getElementById('form-btn-res-cancell').addEventListener('click', () => 
 let radioSwitch = 1;
 document.getElementsByName('logement')[0].addEventListener('change', () => {
     radioSwitch = 0;
+    document.getElementsByClassName('section2-confirmation-form-value')[1].innerText = "Type-1";
     priceUpdate(radioSwitch);
 });
 document.getElementsByName('logement')[1].addEventListener('change', () => {
     radioSwitch = 1;
+    document.getElementsByClassName('section2-confirmation-form-value')[1].innerText = "Type-2";
     priceUpdate(radioSwitch);
 });
 // 

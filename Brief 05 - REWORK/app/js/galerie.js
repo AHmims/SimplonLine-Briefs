@@ -112,6 +112,8 @@ function switchData() {
     //
     //
     document.getElementsByClassName('form-res-row-preview')[0].style.backgroundImage = `url("./app/img/${_PLANETS[pos].path}.png")`;
+    document.getElementsByClassName('section2-confirmation-form-value')[0].innerText = _PLANETS[pos].name;
+    // 
     if (_PLANETS[pos].path == "earth") {
         for (let i = 0; i < 2; i++) {
             document.getElementsByClassName('form-res-row-log-element-price')[i].innerText = 3000 * (i + 1) + "-DH";

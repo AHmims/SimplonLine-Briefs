@@ -453,7 +453,7 @@ body {
                 background-color: shared.$white;
                 transform: skew(-15deg);
                 width: 50%;
-                height: 200px;
+                // height: 200px;
                 box-sizing: border-box;
                 padding: 20px;
                 // 
@@ -464,6 +464,10 @@ body {
 
                 span {
                     flex: 1;
+                }
+
+                #section2-confirmation-form {
+                    margin: 15px 0;
                 }
 
                 #section2-confirmation-btns {
@@ -493,6 +497,7 @@ body {
 
             // 
             #section2-msgs {
+                text-transform: capitalize;
                 display: none;
                 align-self: flex-end;
                 width: 50%;
@@ -611,6 +616,7 @@ body {
 
             #section3-msgs {
                 // display: flex;
+                text-transform: capitalize;
                 align-self: flex-end;
                 width: 50%;
                 height: 75px;
