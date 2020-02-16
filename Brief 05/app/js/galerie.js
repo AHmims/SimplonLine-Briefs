@@ -1,94 +1,138 @@
-const _DATA = [{
-        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis illo necessitatibus nam odioesse quaerat, tempore, omnis laboriosam eius laudantium voluptates amet, hic veritatis. Sintreprehenderit sapiente accusantium ab accusamus.",
-        details: [{
-                title: "Model",
-                value: "Yacht Model"
-            },
-            {
-                title: "Knots",
-                value: "Yacht knots"
-            },
-            {
-                title: "Size",
-                value: "Big"
-            }
-        ],
-        price: "5000"
+let images = document.getElementsByClassName('galerie-images-img');
+let lorem = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, amet! Quis eius consequatur, natus quam illum sunt ad. Eum placeat itaque enim distinctio? Suscipit neque ad atque blanditiis officia nemo omnis ratione eveniet cupiditate fugit voluptatum odit eius, fuga maiores.";
+
+const _PLANETS = [{
+        path: "earth",
+        name: "The Earth",
+        description: lorem,
+        population: "3 bil",
+        polution: "80%",
+        price: "1000 dh"
     },
     {
-        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis.",
-        details: [{
-                title: "Model",
-                value: "Yacht Model"
-            },
-            {
-                title: "Knots",
-                value: "Yacht knots VALUE"
-            },
-            {
-                title: "Size",
-                value: "Medium"
-            }
-        ],
-        price: "6000"
+        path: "moon",
+        name: "The Moon",
+        description: lorem,
+        population: "0 Person",
+        polution: "0%",
+        price: "500000 dh"
+    },
+    {
+        path: "404",
+        name: "Unknown",
+        description: lorem,
+        population: "???",
+        polution: "???",
+        price: "99 dh"
+    },
+    {
+        path: "mars",
+        name: "Mars",
+        description: lorem,
+        population: "0",
+        polution: "??",
+        price: "500000 dh"
+    },
+    {
+        path: "namek-flip",
+        name: "Namek",
+        description: lorem,
+        population: "100 person",
+        polution: "0%",
+        price: "420000 dh"
     }
 ]
-window.onload = () => {
-    let pos = 0;
-    const _LANDING = document.getElementById('landing');
-    const imgs = document.getElementsByClassName('infos-img');
-    _LANDING.style = `background-image: url('app/img/galerie/img${pos+1}.jpg')`;
-    //  
-    for (let i = 1; i <= imgs.length; i++) {
-        imgs[i - 1].style = `background-image: url('app/img/galerie/thumbs/img${pos+i}.jpg')`;
-    }
-    for (let i = 1; i < imgs.length; i++) {
-        imgs[i].style = `background-image: linear-gradient(#0000008a, #0000008a),${imgs[i].style.backgroundImage}`;
-    }
-    // 
-    // 
-    SliderNavigation(0, 1);
-    // 
-    let lastPos = 0;
-    document.getElementById('nav-B').addEventListener('click', () => {
-        if (pos > 0) {
-            lastPos = pos;
-            pos--;
-            // 
-            SliderNavigation(pos, lastPos);
-        }
-    });
-    document.getElementById('nav-N').addEventListener('click', () => {
-        if (pos < imgs.length - 1) {
-            lastPos = pos;
-            pos++;
-            // 
-            SliderNavigation(pos, lastPos);
-        }
-    });
+let pos = 0;
 
+
+document.getElementById('navigation-next').addEventListener('click', () => {
+    if (pos < images.length - 1)
+        pos++;
+    else if (pos == images.length - 1)
+        pos = 0;
+    switchData();
+});
+document.getElementById('navigation-back').addEventListener('click', () => {
+    if (pos > 0)
+        pos--;
+    else if (pos == 0)
+        pos = images.length - 1;
+    switchData();
+});
+// Reservé
+document.getElementById('galerie-reserve-btn').addEventListener('click', () => {
+    let scrollW = document.getElementById('content').scrollWidth / 3;
+    if (sessionStorage.getItem("user-auth-np")) {
+        document.getElementById('content').scrollTo((scrollW * 2) - (scrollW / 2), 0);
+        // 
+        document.getElementById('form-res-row-data-np').value = sessionStorage.getItem("user-auth-np");
+        document.getElementById('form-res-row-data-em').value = sessionStorage.getItem("user-auth-email");
+        // 
+        // Second radio btn is selected by default
+        priceUpdate(1);
+
+    } else
+        document.getElementById('content').scrollTo(scrollW * 3, 0);
+});
+// 
+function priceUpdate(index) {
+    let price = document.getElementsByClassName('form-res-row-log-element-price')[index].innerText;
+    price = parseInt(price.slice(0, price.search("-")));
+    // 
+    price += parseInt(_PLANETS[pos].price.slice(0, _PLANETS[pos].price.search(" ")));
+    // 
+    console.log(document.getElementsByClassName('form-res-row-data')[5].value);
+    price = parseInt(document.getElementsByClassName('form-res-row-data')[5].value * price);
+    // 
+    if (price == 0)
+        price = "0000";
+    document.getElementsByClassName('form-res-price')[0].innerText = `${price}-DH`;
 }
-let bool = true;
-
-function SliderNavigation(index, lastIndex) {
-    const _IMAGES = document.getElementsByClassName('infos-img');
-    // 
-    _IMAGES[lastIndex].style.backgroundImage = `linear-gradient(#0000008a, #0000008a),${_IMAGES[lastIndex].style.backgroundImage}`;
-    // 
-    _IMAGES[index].style.backgroundImage = `url('app/img/galerie/thumbs/img${index+1}.jpg')`;
-    document.getElementById('landing').style = `background-image: linear-gradient(#04151f33, #04151f33), url('app/img/galerie/img${index+1}.jpg');`;
-    // 
-    let data = _DATA[+bool];
-    document.getElementById('infos-desc-cont').innerText = data.description;
-    // 
-    let details_title = document.getElementsByClassName('infos-details-title');
-    let details_data = document.getElementsByClassName('infos-details-det');
-
-    for (let i = 0; i < details_title.length; i++) {
-        details_title[i].innerText = data.details[i].title;
-        details_data[i].innerText = data.details[i].value;
+// 
+// 
+function switchData() {
+    document.getElementById('galerie-preview-planet').style.backgroundImage = `url("./app/img/${_PLANETS[pos].path}.png")`;
+    //Clear previous style 
+    for (let i = 0; i < images.length; i++) {
+        if (i != pos) {
+            images[i].style.backgroundSize = "";
+            images[i].style.filter = "";
+        }
     }
+    // Apply style
+    images[pos].style.backgroundSize = "270%";
+    images[pos].style.filter = "brightness(0.85)";
     // 
-    document.getElementById('infos-price-amount').innerText = data.price + "-DH";
-    bool = !bool;
+    // CHANGE DISPLAYED TEXT
+    document.getElementById('galerie-desc-title').innerText = _PLANETS[pos].name;
+    document.getElementById('galerie-desc-txt').innerText = _PLANETS[pos].description;
+    document.getElementsByClassName('galerie-desc-det')[0].lastElementChild.innerText = _PLANETS[pos].population;
+    document.getElementsByClassName('galerie-desc-det')[1].lastElementChild.innerText = _PLANETS[pos].polution;
+    document.getElementsByClassName('galerie-desc-det')[2].lastElementChild.innerText = _PLANETS[pos].price;
+    //
+    //
+    document.getElementsByClassName('form-res-row-preview')[0].style.backgroundImage = `url("./app/img/${_PLANETS[pos].path}.png")`;
+    document.getElementsByClassName('section2-confirmation-form-value')[0].innerText = _PLANETS[pos].name;
+    // 
+    if (_PLANETS[pos].path == "earth") {
+        for (let i = 0; i < 2; i++) {
+            document.getElementsByClassName('form-res-row-log-element-price')[i].innerText = 3000 * (i + 1) + "-DH";
+            document.getElementsByClassName('form-res-row-log-element-img')[i].style.backgroundImage = `url("./app/img/earth/log${i+1}.jpg")`;
+        }
+    } else {
+        for (let i = 0; i < 2; i++) {
+            document.getElementsByClassName('form-res-row-log-element-price')[i].innerText = 40000 * (i + 1) + "-DH";
+            document.getElementsByClassName('form-res-row-log-element-img')[i].style.backgroundImage = `url("./app/img/other/log${i+1}.jpg")`;
+        }
+    }
+}
+// 
+// 
+// 
+// Lowercase to Uppercase
+const _INPUTS = document.querySelectorAll('input[type="text"]');
+for (let i = 0; i < _INPUTS.length; i++) {
+    _INPUTS[i].onkeyup = () => {
+        _INPUTS[i].value = _INPUTS[i].value.toUpperCase();
+    }
 }

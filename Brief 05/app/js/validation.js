@@ -1,3 +1,0 @@
-function validateId(string) {
-    // let 
-}
