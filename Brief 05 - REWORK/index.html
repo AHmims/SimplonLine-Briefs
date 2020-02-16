@@ -128,6 +128,10 @@
                         <input type="text" class="form-res-row-data" id="form-res-row-data-em" disabled />
                     </div>
                     <div class="form-res-row">
+                        <span class="form-res-row-title">Date de Naissance :</span>
+                        <input type="date" class="form-res-row-data" />
+                    </div>
+                    <div class="form-res-row">
                         <span class="form-res-row-title">Date Debut :</span>
                         <input type="date" class="form-res-row-data" />
                     </div>
@@ -135,10 +139,14 @@
                         <span class="form-res-row-title">Date Fin :</span>
                         <input type="date" class="form-res-row-data" />
                     </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Nombre de personne :</span>
+                        <input type="number" class="form-res-row-data" value="0" />
+                    </div>
                     <hr>
                     <div class="form-res-row">
                         <span class="form-res-row-title">Prix :</span>
-                        <span class="form-res-row-title form-res-price">6000-DH</span>
+                        <span class="form-res-row-title form-res-price">0000-DH</span>
                     </div>
                     <hr>
                     <div class="form-res-row">
@@ -157,12 +165,25 @@
                 <div id="section2-alerts">
                     <div id="section2-confirmation">
                         <span>Voulez vous vraiment reservez cette Planet ?</span>
-                        <div>
-                            <span>Reserver</span>
-                            <span>Annuler</span>
+                        <div id="section2-confirmation-form">
+                            <div class="section2-confirmation-form-row">
+                                <span class="section2-confirmation-form-title">Planet :</span>
+                                <span class="section2-confirmation-form-value">#</span>
+                            </div>
+                            <div class="section2-confirmation-form-row">
+                                <span class="section2-confirmation-form-title">Planet :</span>
+                                <span class="section2-confirmation-form-value">#</span>
+                            </div>
+                        </div>
+                        <div id="section2-confirmation-btns">
+                            <span id="section2-confirmation-cancel">Annuler</span>
+                            <span id="section2-confirmation-valide">Reserver</span>
                         </div>
                     </div>
-                    <div id="section2-msgs"></div>
+                    <div id="section2-msgs">
+                        <!-- <i class="gg-danger"></i> -->
+                        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, error. -->
+                    </div>
                 </div>
             </div>
             <div class="sections" id="inscription">
@@ -191,6 +212,11 @@
                     <div class="form-row">
                         <span id="form-btn-main">Inscrire</span>
                         <span id="form-btn-sec">Annuler</span>
+                    </div>
+                </div>
+                <div id="section3-alerts">
+                    <div id="section3-msgs">
+                        lorem
                     </div>
                 </div>
             </div>

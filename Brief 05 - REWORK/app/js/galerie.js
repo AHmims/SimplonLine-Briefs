@@ -81,6 +81,11 @@ function priceUpdate(index) {
     // 
     price += parseInt(_PLANETS[pos].price.slice(0, _PLANETS[pos].price.search(" ")));
     // 
+    console.log(document.getElementsByClassName('form-res-row-data')[5].value);
+    price = parseInt(document.getElementsByClassName('form-res-row-data')[5].value * price);
+    // 
+    if (price == 0)
+        price = "0000";
     document.getElementsByClassName('form-res-price')[0].innerText = `${price}-DH`;
 }
 // 

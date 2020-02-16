@@ -411,6 +411,8 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  display: none;
+  pointer-events: none;
 }
 .sections:nth-of-type(2) #section2-alerts #section2-confirmation {
   display: flex;
@@ -426,24 +428,56 @@ body {
   font-family: "Kelly Slab", cursive;
   font-size: 40px;
   color: #000;
+  display: none;
 }
 .sections:nth-of-type(2) #section2-alerts #section2-confirmation span {
   flex: 1;
 }
-.sections:nth-of-type(2) #section2-alerts #section2-confirmation div {
+.sections:nth-of-type(2) #section2-alerts #section2-confirmation #section2-confirmation-btns {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
 }
-.sections:nth-of-type(2) #section2-alerts #section2-confirmation div span {
+.sections:nth-of-type(2) #section2-alerts #section2-confirmation #section2-confirmation-btns span {
   flex: 0;
+  padding: 5px 10px;
+  user-select: none;
+  cursor: pointer;
+}
+.sections:nth-of-type(2) #section2-alerts #section2-confirmation #section2-confirmation-btns span:last-of-type {
+  transition: 200ms all ease-in-out;
+  border: 3px solid black;
+  margin-left: 5px;
+}
+.sections:nth-of-type(2) #section2-alerts #section2-confirmation #section2-confirmation-btns span:last-of-type:hover {
+  color: #fff;
+  border-color: #fff;
+  background-color: #000;
+}
+.sections:nth-of-type(2) #section2-alerts #section2-msgs {
+  display: none;
+  align-self: flex-end;
+  width: 50%;
+  height: 75px;
+  transform: skew(-15deg);
+  background-color: #fff;
+  font-family: "Kelly Slab", cursive;
+  color: #f73535;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease-in-out;
+}
+.sections:nth-of-type(2) #section2-alerts #section2-msgs i {
+  margin-right: 20px;
 }
 .sections:last-of-type {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .sections:last-of-type #form-inscription {
   width: fit-content;
@@ -516,6 +550,35 @@ body {
   color: #fff;
   border: 2px solid #fff;
   margin-right: 10px;
+}
+.sections:last-of-type #section3-alerts {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  pointer-events: none;
+}
+.sections:last-of-type #section3-alerts #section3-msgs {
+  align-self: flex-end;
+  width: 50%;
+  height: 75px;
+  transform: skew(-15deg);
+  background-color: #fff;
+  font-family: "Kelly Slab", cursive;
+  color: #f73535;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease-in-out;
+}
+.sections:last-of-type #section3-alerts #section3-msgs i {
+  margin-right: 20px;
 }
 
 @media screen and (max-width: 680px) {

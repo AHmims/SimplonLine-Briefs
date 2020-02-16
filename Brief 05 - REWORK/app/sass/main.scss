@@ -444,6 +444,8 @@ body {
             // 
             // 
             @include shared.flex(row, center, center);
+            display: none;
+            pointer-events: none;
 
             // 
             #section2-confirmation {
@@ -458,25 +460,70 @@ body {
                 font-family: "Kelly Slab", cursive;
                 font-size: 40px;
                 color: shared.$black;
+                display: none;
 
                 span {
                     flex: 1;
                 }
 
-                div {
+                #section2-confirmation-btns {
                     @include shared.flex(row, flex-end, center);
 
                     span {
                         flex: 0;
+                        padding: 5px 10px;
+                        user-select: none;
+                        cursor: pointer;
+
+                        // 
+                        &:last-of-type {
+                            transition: 200ms all ease-in-out;
+                            border: 3px solid black;
+                            margin-left: 5px;
+
+                            &:hover {
+                                color: shared.$white;
+                                border-color: shared.$white;
+                                background-color: shared.$black;
+                            }
+                        }
                     }
                 }
             }
+
+            // 
+            #section2-msgs {
+                display: none;
+                align-self: flex-end;
+                width: 50%;
+                height: 75px;
+                transform: skew(-15deg);
+                background-color: shared.$white;
+                // position: absolute;
+                // bottom: 40px;
+                // 
+                font-family: "Kelly Slab", cursive;
+                // color: black;
+                color: #f73535;
+                font-size: 25px;
+                align-items: center;
+                justify-content: center;
+                // 
+                transition: all 200ms ease-in-out;
+
+                i {
+                    // color: #f73535;
+                    margin-right: 20px;
+                }
+            }
         }
+
     }
 
     //INSCRIPTION
     &:last-of-type {
         @include shared.flex(row, center, center);
+        position: relative;
 
         // 
         #form-inscription {
@@ -545,6 +592,45 @@ body {
                             margin-right: 10px;
                         }
                     }
+                }
+            }
+        }
+
+        #section3-alerts {
+            width: 100vw;
+            height: 100vh;
+            // background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            z-index: 10;
+            bottom: 0;
+            // 
+            // 
+            @include shared.flex(row, center, center);
+            display: none;
+            pointer-events: none;
+
+            #section3-msgs {
+                // display: flex;
+                align-self: flex-end;
+                width: 50%;
+                height: 75px;
+                transform: skew(-15deg);
+                background-color: shared.$white;
+                // position: absolute;
+                // bottom: 40px;
+                // 
+                font-family: "Kelly Slab", cursive;
+                // color: black;
+                color: #f73535;
+                font-size: 25px;
+                align-items: center;
+                justify-content: center;
+                // 
+                transition: all 200ms ease-in-out;
+
+                i {
+                    // color: #f73535;
+                    margin-right: 20px;
                 }
             }
         }
