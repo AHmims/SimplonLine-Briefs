@@ -6,11 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "mdb": "node model/mongoDB.js"
+    "mdb": "node model/mongoDB.js",
+    "sqlite": "node model/sqlite.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "better-sqlite3": "^6.0.1",
     "body-parser": "^1.19.0",
     "chalk": "^4.0.0",
     "dotenv": "^8.2.0",

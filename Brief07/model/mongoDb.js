@@ -71,6 +71,7 @@ async function connectionStart() {
             'Connexion avec la base de données établie avec ' +
             _CHALK.black.bgGreen.bold('succès')
         ));
+    // 
 }
 async function connectionStop() {
     if (mongoose.connection.readyState == 1) {
@@ -81,4 +82,40 @@ async function connectionStop() {
         ));
     }
 }
-connectionStart();
+// 
+function createTable(name) {
+    const schema = new mongoose.Schema();
+    let data = {};
+    switch (name) {
+        case "user":
+            data = {
+                id: String,
+                nomPrenom: String,
+                email: String,
+                pass: String
+            };
+            break;
+        case "planet":
+            data = {
+                name: String,
+                description: String,
+                population: String,
+                polution: String,
+                price: String
+            };
+            break;
+        case "reservation":
+            data = {
+
+            };
+            break;
+    }
+    schema.add(data);
+    // 
+    return mongoose.model(name, schema);
+}
+// 
+function addToTable(data) {
+    const model = createTable("users", data);
+    const subModel
+}
