@@ -61,15 +61,27 @@ document.getElementById('form-btn-main').addEventListener('click', () => {
         // 
         // 
         if (valide == true) {
-            // alert('SHOW A SUCCES MESSAGE / POP UP HERE');
-            alert('Compte cree avec succes');
-            sessionStorage.setItem("user-auth-np", _VALUES[1].value);
-            sessionStorage.setItem("user-auth-email", _VALUES[2].value);
-            // 
-            document.getElementById('form-res-row-data-np').value = sessionStorage.getItem("user-auth-np");
-            document.getElementById('form-res-row-data-em').value = sessionStorage.getItem("user-auth-email");
-            // 
-            document.getElementById('content').scrollTo(0, 0);
+            $.post('/save', {
+                type: "User",
+                data: {
+                    id: _VALUES[0].value,
+                    nomPrenom: _VALUES[1].value,
+                    email: _VALUES[2].value,
+                    pass: _VALUES[3].value
+                }
+            }, (response) => {
+                if (response) {
+                    // alert('SHOW A SUCCES MESSAGE / POP UP HERE');
+                    alert('Compte cree avec succes');
+                    sessionStorage.setItem("user-auth-np", _VALUES[1].value);
+                    sessionStorage.setItem("user-auth-email", _VALUES[2].value);
+                    // 
+                    document.getElementById('form-res-row-data-np').value = sessionStorage.getItem("user-auth-np");
+                    document.getElementById('form-res-row-data-em').value = sessionStorage.getItem("user-auth-email");
+                    // 
+                    document.getElementById('content').scrollTo(0, 0);
+                }
+            });
         }
     }
 });

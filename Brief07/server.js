@@ -21,7 +21,7 @@ _APP.get('/', (req, res) => {
 // 
 // 
 _APP.post('/save', (req, res) => {
-    var ret = DB.insertData(req.body);
+    var ret = DB.insertData(req.body.type, req.body.data);
     res.end(ret + "");
 });
 // START THE SERVER

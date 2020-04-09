@@ -31,6 +31,28 @@ function insertData(table, data) {
     }
 }
 // 
+function getReservation(clientId) {
+    return _DB.prepare(`SELECT * FROM Reservation WHERE idUser='${clientId}'`).all();
+}
+// 
+function getUserCred(data) {
+    return _DB.prepare(`SELECT id,COUNT(id) AS userExists FROM User WHERE email = '${data.email}' AND pass = '${data.pass}'`).get();
+}
+// 
+function getUserData(userId) {
+    return _DB.prepare(`SELECT * FROM User WHERE id = '${userId}'`).get();
+}
+// 
+function deleteQuery(table, key) {
+    let query = `DELETE FROM ${table} WHERE id='${key}'`;
+    let res = _DB.prepare(query).run();
+    // 
+    return res.changes;
+}
+// 
+// 
+// getReservation("sdq");
+// 
 module.exports = {
     createTables,
     insertData
