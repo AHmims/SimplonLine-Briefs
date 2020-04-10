@@ -50,12 +50,25 @@ function deleteQuery(table, key) {
     return res.changes;
 }
 // 
+function editReservation(data) {
+    const query = `UPDATE Reservation SET idPlanet = '${data.idPlanet}',logement = '${data.logement}',dateN='${data.dateN}',dateD='${data.dateD}',dateF = '${data.dateF}',nbPersones='${data.nbPersones}',prix='${data.prix}',carteB='${data.carteB}',ccv='${data.ccv}' WHERE id=${data.id};`;
+    console.log(query);
+    let res = _DB.prepare(query).run();
+    // 
+    return res.changes;
+}
+// 
 // 
 // getReservation("sdq");
 // 
 module.exports = {
     createTables,
-    insertData
+    insertData,
+    getReservation,
+    getUserCred,
+    getUserData,
+    deleteQuery,
+    editReservation
 }
 // 
 // createTables();

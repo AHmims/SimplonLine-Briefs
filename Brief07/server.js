@@ -22,7 +22,27 @@ _APP.get('/', (req, res) => {
 // 
 _APP.post('/save', (req, res) => {
     var ret = DB.insertData(req.body.type, req.body.data);
-    res.end(ret + "");
+    res.end(ret.toString());
+});
+_APP.post('/getUserData', (req, res) => {
+    var ret = DB.getUserData(req.body.userId);
+    res.end(JSON.stringify(ret));
+});
+_APP.post('/getReservations', (req, res) => {
+    var ret = DB.getReservation(req.body.clientId);
+    res.end(JSON.stringify(ret));
+});
+_APP.post('/login', (req, res) => {
+    var ret = DB.getUserCred(req.body.data);
+    res.end(JSON.stringify(ret));
+});
+_APP.post('/remove', (req, res) => {
+    var ret = DB.deleteQuery(req.body.table, req.body.key);
+    res.end(ret.toString());
+});
+_APP.post('/editReservations', (req, res) => {
+    var ret = DB.editReservation(req.body.data);
+    res.end(ret.toString());
 });
 // START THE SERVER
 _APP.listen(_PORT, () => {
