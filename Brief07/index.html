@@ -49,17 +49,17 @@
         <div id="content">
             <div class="sections" id="galerie">
                 <div id="galerie-preview">
-                    <div id="galerie-preview-planet" style="background-image: url('./app/img/earth.png');"></div>
+                    <div id="galerie-preview-planet"></div>
                 </div>
                 <div id="galerie-content">
                     <div id="galerie-images">
-                        <div class="galerie-images-img"
+                        <!-- <div class="galerie-images-img"
                             style="background-image: url('app/img/earth.png');background-size: 270%;filter: brightness(0.85);">
                         </div>
                         <div class="galerie-images-img" style="background-image: url('app/img/moon.png');"></div>
                         <div class="galerie-images-img" style="background-image: url('app/img/404.png');"></div>
                         <div class="galerie-images-img" style="background-image: url('app/img/mars.png');"></div>
-                        <div class="galerie-images-img" style="background-image: url('app/img/namek-flip.png');"></div>
+                        <div class="galerie-images-img" style="background-image: url('app/img/namek-flip.png');"></div> -->
                     </div>
                     <div id="galerie-navigation">
                         <span id="navigation-next">&rsaquo;</span>
@@ -143,7 +143,7 @@
                     </div>
                     <div class="form-res-row">
                         <span class="form-res-row-title">Nombre de personne :</span>
-                        <input type="number" class="form-res-row-data" value="0" />
+                        <input type="number" class="form-res-row-data" value="1" />
                     </div>
                     <hr>
                     <div class="form-res-row">
@@ -226,12 +226,20 @@
                     <div class="form-row">
                         <span id="form-btn-main">Inscrire</span>
                         <span id="form-btn-sec">Annuler</span>
+                        <span id="form-btn-login">Login</span>
                     </div>
                 </div>
                 <div id="section3-alerts">
                     <div id="section3-msgs">
                         lorem
                     </div>
+                </div>
+                <!--  -->
+                <div id="form-login">
+                    <span>S'identifier</span>
+                    <input type="text" id="login-id">
+                    <input type="password" id="login-pass">
+                    <input type="button" value="Login" id="btn-login">
                 </div>
             </div>
         </div>

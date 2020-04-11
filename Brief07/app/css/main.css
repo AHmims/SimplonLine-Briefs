@@ -1,5 +1,10 @@
 @import url("https://css.gg/c");
 @import url("https://fonts.googleapis.com/css?family=Work+Sans|Kelly+Slab|Zilla+Slab+Highlight|Mukta&display=swap");
+.selectionHighlited {
+  background-size: 270% !important;
+  filter: brightness(0.85) !important;
+}
+
 body,
 html {
   width: 100%;
@@ -545,14 +550,17 @@ body {
   font-size: 45px;
   padding: 5px 10px;
 }
-.sections:last-of-type #form-inscription .form-row:last-of-type span:first-of-type {
+.sections:last-of-type #form-inscription .form-row:last-of-type #form-btn-main {
   color: #000;
   background-color: #fff;
 }
-.sections:last-of-type #form-inscription .form-row:last-of-type span:last-of-type {
+.sections:last-of-type #form-inscription .form-row:last-of-type #form-btn-sec {
   color: #fff;
   border: 2px solid #fff;
   margin-right: 10px;
+}
+.sections:last-of-type #form-inscription .form-row:last-of-type #form-btn-login {
+  color: #fff;
 }
 .sections:last-of-type #section3-alerts {
   width: 100vw;
@@ -720,6 +728,39 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #fff;
+}
+
+#form-login {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 35px;
+  background-color: white;
+  transform: skewX(-15deg);
+  font-family: "Kelly Slab", cursive;
+}
+#form-login span {
+  font-size: 34px;
+}
+#form-login #btn-login {
+  width: fit-content;
+  align-self: flex-end;
+  background: none;
+  border: 1px solid black;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 5px 10px;
+  height: fit-content;
+  cursor: pointer;
+}
+#form-login input {
+  width: 250px;
+  height: 25px;
+  background: none;
+  border: 1px solid black;
+  padding-left: 10px;
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

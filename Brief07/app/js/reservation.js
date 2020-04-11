@@ -87,12 +87,31 @@ document.getElementById('form-btn-res-order').addEventListener('click', () => {
         // 
         // 
         document.getElementById('section2-confirmation-valide').addEventListener('click', () => {
-            document.getElementById('section2-alerts').style.display = "none";
-            // document.getElementById('section2-alerts').style.backgroundColor = "transparent";
-            document.getElementById('section2-confirmation').style.display = "none";
-            console.log("%cIS GOOD", "background:green;color:white;padding:5px;border-radius:5px;");
-            // 
-            alert("Planet Reservée");
+            $.post('/save', {
+                type: "Reservation",
+                data: {
+                    idUser: sessionStorage.getItem("user-id"),
+                    idPlanet: document.getElementsByClassName('selectionHighlited')[0].id,
+                    logement: getSelectedLogment(),
+                    dateN: new Date(_RES_INPUTS[2].value),
+                    dateD: new Date(_RES_INPUTS[3].value),
+                    dateF: new Date(_RES_INPUTS[4].value),
+                    nbPersones: _RES_INPUTS[5].value,
+                    price: document.getElementsByClassName('form-res-price')[0].innerText,
+                    carteB: _RES_INPUTS[6].value,
+                    ccv: _RES_INPUTS[7].value
+                }
+            }, (response) => {
+                if (response) {
+
+                    document.getElementById('section2-alerts').style.display = "none";
+                    // document.getElementById('section2-alerts').style.backgroundColor = "transparent";
+                    document.getElementById('section2-confirmation').style.display = "none";
+                    console.log("%cIS GOOD", "background:green;color:white;padding:5px;border-radius:5px;");
+                    // 
+                    alert("Planet Reservée");
+                }
+            });
         });
         document.getElementById('section2-confirmation-cancel').addEventListener('click', () => {
             document.getElementById('section2-alerts').style.display = "none";
@@ -144,4 +163,15 @@ function showError(msg) {
     setTimeout(() => {
         document.getElementById('section2-msgs').style.display = "none";
     }, 2000);
+}
+
+
+
+// 
+function getSelectedLogment() {
+    var radios = document.getElementsByName('logement');
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked)
+            return document.getElementsByClassName('form-res-row-log-element-price')[i].innerText;
+    }
 }

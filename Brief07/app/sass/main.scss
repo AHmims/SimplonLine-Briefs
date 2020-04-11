@@ -1,5 +1,12 @@
 @use 'shared';
 
+.selectionHighlited {
+    background-size: 270% !important;
+    filter: brightness(0.85) !important;
+}
+
+
+
 // 
 body,
 html {
@@ -586,17 +593,23 @@ body {
                         font-size: 45px;
                         padding: 5px 10px;
 
-                        &:first-of-type {
-                            color: shared.$black;
-                            background-color: shared.$white;
-                        }
-
-                        &:last-of-type {
-                            color: shared.$white;
-                            border: 2px solid shared.$white;
-                            margin-right: 10px;
-                        }
                     }
+
+                    #form-btn-main {
+                        color: shared.$black;
+                        background-color: shared.$white;
+                    }
+
+                    #form-btn-sec {
+                        color: shared.$white;
+                        border: 2px solid shared.$white;
+                        margin-right: 10px;
+                    }
+
+                    #form-btn-login {
+                        color: shared.$white;
+                    }
+
                 }
             }
         }
@@ -822,4 +835,47 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: shared.$white;
+}
+
+// 
+// 
+#form-login {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 35px;
+    background-color: white;
+    transform: skewX(-15deg);
+
+    font-family: "Kelly Slab", cursive;
+
+
+    // 
+    span {
+        font-size: 34px;
+    }
+
+    // 
+    #btn-login {
+        width: fit-content;
+        align-self: flex-end;
+        background: none;
+        border: 1px solid black;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 5px 10px;
+        height: fit-content;
+        cursor: pointer;
+    }
+
+    input {
+        width: 250px;
+        height: 25px;
+        background: none;
+        border: 1px solid black;
+        padding-left: 10px;
+        margin-bottom: 10px;
+    }
+
 }

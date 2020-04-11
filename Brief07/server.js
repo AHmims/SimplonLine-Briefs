@@ -21,6 +21,7 @@ _APP.get('/', (req, res) => {
 // 
 // 
 _APP.post('/save', (req, res) => {
+    console.log(req.body.data);
     var ret = DB.insertData(req.body.type, req.body.data);
     res.end(ret.toString());
 });
@@ -43,6 +44,10 @@ _APP.post('/remove', (req, res) => {
 _APP.post('/editReservations', (req, res) => {
     var ret = DB.editReservation(req.body.data);
     res.end(ret.toString());
+});
+_APP.post('/getAll', (req, res) => {
+    var ret = DB.getAllTableData(req.body.table);
+    res.end(JSON.stringify(ret));
 });
 // START THE SERVER
 _APP.listen(_PORT, () => {

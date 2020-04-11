@@ -6,7 +6,7 @@ const log = console.log;
 // 
 function createTables() {
     const string = `CREATE TABLE IF NOT EXISTS User(id STRING, nomPrenom STRING,email STRING,pass STRING); 
-        CREATE TABLE IF NOT EXISTS Planet(id INTEGER PRIMARY KEY,name STRING,description TEXT,population STRING,polution STRING,price INTEGER); 
+        CREATE TABLE IF NOT EXISTS Planet(id INTEGER PRIMARY KEY,name STRING,description TEXT,population STRING,polution STRING,price INTEGER,imgName STRING); 
         CREATE TABLE IF NOT EXISTS Reservation(id INTEGER PRIMARY KEY,idUser STRING,idPlanet INTEGER,logement STRING,dateN DATE,dateD DATE,dateF DATE,nbPersones INTEGER,prix DOUBLE,carteB STRING,ccv INTEGER);`;
     // 
     _DB.exec(string);
@@ -14,19 +14,22 @@ function createTables() {
 }
 // 
 function insertData(table, data) {
+    console.log(data);
     var str = 'INSERT INTO User (id,nomPrenom,email,pass) VALUES(@id,@nomPrenom,@email,@pass);';
     switch (table) {
         case "Planet":
             str = 'INSERT INTO Planet (name,description,population,polution,price) VALUES(@name,@description,@population,@polution,@price);';
             break;
         case "Reservation":
-            str = 'INSERT INTO Reservation (idUser,idPlanet,logement,dateN,dateD,dateF,nbPersones,prix,carteB,ccv) values(@idUser,@idPlanet,@logement,@dateN,@dateD,@dateF,@nbPersones,@prix,@carteB,@ccv);';
+            str = 'INSERT INTO Reservation (idUser,idPlanet,logement,dateN,dateD,dateF,nbPersones,prix,carteB,ccv) values(@idUser,@idPlanet,@logement,@dateN,@dateD,@dateF,@nbPersones,@price,@carteB,@ccv);';
             break;
     }
     try {
         var state = _DB.prepare(str).run(data);
+        console.log(state);
         return Boolean(state.changes);
     } catch (err) {
+        console.log(err);
         log(_CHALK.black.bgRed.italic("Error! [Function insertData()]"));
     }
 }
@@ -52,10 +55,16 @@ function deleteQuery(table, key) {
 // 
 function editReservation(data) {
     const query = `UPDATE Reservation SET idPlanet = '${data.idPlanet}',logement = '${data.logement}',dateN='${data.dateN}',dateD='${data.dateD}',dateF = '${data.dateF}',nbPersones='${data.nbPersones}',prix='${data.prix}',carteB='${data.carteB}',ccv='${data.ccv}' WHERE id=${data.id};`;
-    console.log(query);
     let res = _DB.prepare(query).run();
     // 
     return res.changes;
+}
+
+function getAllTableData(table) {
+    const query = `SELECT * FROM ${table}`;
+    let res = _DB.prepare(query).all();
+    // 
+    return res;
 }
 // 
 // 
@@ -68,7 +77,8 @@ module.exports = {
     getUserCred,
     getUserData,
     deleteQuery,
-    editReservation
+    editReservation,
+    getAllTableData
 }
 // 
 // createTables();
