@@ -1,3 +1,9 @@
+if (sessionStorage.getItem("user-auth-email"))
+    loginSucces();
+
+
+
+
 // sessionStorage.getItem(_SESSION);
 const _Regex_Identifiant = /^[a-zA-Z0-9._-]{5,20}$/;
 const _Regex_NP = /^[a-zA-Z ]+$/;
@@ -77,10 +83,7 @@ document.getElementById('form-btn-main').addEventListener('click', () => {
                     sessionStorage.setItem("user-auth-email", _VALUES[2].value);
                     sessionStorage.setItem("user-id", _VALUES[0].value);
                     // 
-                    document.getElementById('form-res-row-data-np').value = sessionStorage.getItem("user-auth-np");
-                    document.getElementById('form-res-row-data-em').value = sessionStorage.getItem("user-auth-email");
-                    // 
-                    document.getElementById('content').scrollTo(0, 0);
+                    loginSucces();
                 } else
                     inscriptionError('Error while saving in DB');
             });
@@ -118,7 +121,83 @@ function inscriptionError(msg) {
 document.getElementById('form-btn-login').addEventListener('click', () => {
     document.getElementById('form-login').style.display = "flex";
 });
+document.getElementById('btn-login-exit').addEventListener('click', () => {
+    document.getElementById('form-login').style.display = "none";
+})
 // 
-document.getElementById('#btn-login').addEventListener('click', () => {
-
+document.getElementById('btn-login').addEventListener('click', () => {
+    $.post("/login", {
+        data: {
+            email: document.getElementById('login-id').value,
+            pass: document.getElementById('login-pass').value
+        }
+    }, (response) => {
+        response = JSON.parse(response);
+        if (response.userExists > 0) {
+            sessionStorage.setItem("user-auth-np", response.nomPrenom);
+            sessionStorage.setItem("user-auth-email", response.email);
+            sessionStorage.setItem("user-id", response.id);
+            // 
+            loginSucces();
+        }
+    });
 });
+// 
+// 
+function loginSucces() {
+    document.getElementById('form-res-row-data-np').value = sessionStorage.getItem("user-auth-np");
+    document.getElementById('form-res-row-data-em').value = sessionStorage.getItem("user-auth-email");
+    // 
+    document.getElementById('content').scrollTo(0, 0);
+    // 
+    document.getElementById('inscription').style.display = "none";
+    document.getElementById('navBar-Right').children[0].style.display = "none";
+    document.getElementById('navBar-Right').children[1].style.display = "block";
+    // 
+    getAllReservations();
+}
+// 
+function getAllReservations() {
+    document.getElementById('reservationsContainer').innerHTML = "";
+    // 
+    $.post('/getReservations', {
+        clientId: sessionStorage.getItem('user-id')
+    }, (response) => {
+        response = JSON.parse(response);
+        // console.log(response);
+        response.forEach(element => {
+            const htmlStr = `<div class="reservationBox" id="reservBox-${element.id}">
+            <div class="reserv-PlanetPreview" style="background-image:url('/app/img/${element.imgName}.png');"></div>
+            <div class="reserv-column">
+                <span class="reserv-txt">${element.name}</span>
+                <span class="reserv-txt">${element.prix}</span>
+            </div>
+            <div class="reserv-column">
+                <span class="reserv-txt">Nombre du personnes : ${element.nbPersones}</span>
+                <span class="reserv-txt">Duration :</span>
+            </div>
+        </div>`;
+            // 
+            document.getElementById('reservationsContainer').innerHTML += htmlStr;
+            // 
+            let contBtn = document.createElement('div');
+            let btnIcon = document.createElement('i');
+            // 
+            contBtn.setAttribute('class', 'reserv-remove');
+            btnIcon.setAttribute('class', 'gg-trash');
+            // 
+            contBtn.addEventListener('click', () => {
+                $.post('/remove', {
+                    table: "Reservation",
+                    key: element.id
+                }, (response) => {
+                    if (response > 0)
+                        document.getElementById('reservBox-' + element.id).remove();
+                });
+            });
+            // 
+            contBtn.appendChild(btnIcon);
+            document.getElementById('reservBox-' + element.id).appendChild(contBtn);
+        });
+    });
+}

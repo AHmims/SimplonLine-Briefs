@@ -32,6 +32,12 @@
                         <span>Inscription</span>
                     </div>
                 </a>
+                <a href="#reservations">
+                    <div>
+                        <i class="gg-notes"></i>
+                        <span>Reservations</span>
+                    </div>
+                </a>
                 <a href="#reservation">
                     <div>
                         <i class="gg-shopping-bag"></i>
@@ -237,9 +243,17 @@
                 <!--  -->
                 <div id="form-login">
                     <span>S'identifier</span>
-                    <input type="text" id="login-id">
-                    <input type="password" id="login-pass">
-                    <input type="button" value="Login" id="btn-login">
+                    <input type="text" placeholder="Email" id="login-id">
+                    <input type="password" placeholder="Mot de passs" id="login-pass">
+                    <div>
+                        <input type="button" value="Anuller" id="btn-login-exit">
+                        <input type="button" value="Login" id="btn-login">
+                    </div>
+                </div>
+            </div>
+            <div class="sections" id="reservations">
+                <span id="reservationsTitle">Liste des Reservations</span>
+                <div id="reservationsContainer">
                 </div>
             </div>
         </div>

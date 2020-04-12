@@ -110,6 +110,7 @@ document.getElementById('form-btn-res-order').addEventListener('click', () => {
                     console.log("%cIS GOOD", "background:green;color:white;padding:5px;border-radius:5px;");
                     // 
                     alert("Planet Reservée");
+                    getAllReservations();
                 }
             });
         });

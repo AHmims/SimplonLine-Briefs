@@ -18,7 +18,7 @@ function insertData(table, data) {
     var str = 'INSERT INTO User (id,nomPrenom,email,pass) VALUES(@id,@nomPrenom,@email,@pass);';
     switch (table) {
         case "Planet":
-            str = 'INSERT INTO Planet (name,description,population,polution,price) VALUES(@name,@description,@population,@polution,@price);';
+            str = 'INSERT INTO Planet (name,description,population,polution,price,imgName) VALUES(@name,@description,@population,@polution,@price,@imgName);';
             break;
         case "Reservation":
             str = 'INSERT INTO Reservation (idUser,idPlanet,logement,dateN,dateD,dateF,nbPersones,prix,carteB,ccv) values(@idUser,@idPlanet,@logement,@dateN,@dateD,@dateF,@nbPersones,@price,@carteB,@ccv);';
@@ -35,11 +35,11 @@ function insertData(table, data) {
 }
 // 
 function getReservation(clientId) {
-    return _DB.prepare(`SELECT * FROM Reservation WHERE idUser='${clientId}'`).all();
+    return _DB.prepare(`SELECT Reservation.*,Planet.name,Planet.imgName FROM Reservation,Planet WHERE Planet.id = Reservation.idPlanet AND Reservation.idUser='${clientId}' `).all();
 }
 // 
 function getUserCred(data) {
-    return _DB.prepare(`SELECT id,COUNT(id) AS userExists FROM User WHERE email = '${data.email}' AND pass = '${data.pass}'`).get();
+    return _DB.prepare(`SELECT id,email,nomprenom,COUNT(id) AS userExists FROM User WHERE email = '${data.email}' AND pass = '${data.pass}'`).get();
 }
 // 
 function getUserData(userId) {

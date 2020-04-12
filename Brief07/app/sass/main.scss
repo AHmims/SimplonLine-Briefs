@@ -64,6 +64,10 @@ body {
             text-decoration: none;
             color: shared.$white;
         }
+
+        a[href="#reservations"] {
+            display: none;
+        }
     }
 
     #navBar-Left {
@@ -113,21 +117,18 @@ body {
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
 
+    .sections {
+        // height: 100vh;
+        flex: none;
+        width: 100vw;
+        border-right: 1px solid white;
+        scroll-snap-align: center;
+    }
 
-
-    // background-color: purple;
-}
-
-.sections {
-    // height: 100vh;
-    flex: none;
-    width: 100vw;
-    border-right: 1px solid white;
-    scroll-snap-align: center;
 
     // background-color: red;
     // GALLERY
-    &:first-of-type {
+    #galerie {
         // background-color: red;
         @include shared.flex(row, unset, unset);
 
@@ -297,7 +298,7 @@ body {
     }
 
     //Reservation
-    &:nth-of-type(2) {
+    #reservation {
         @include shared.flex(row, center, center);
         position: relative;
 
@@ -533,7 +534,7 @@ body {
     }
 
     //INSCRIPTION
-    &:last-of-type {
+    #inscription {
         @include shared.flex(row, center, center);
         position: relative;
 
@@ -654,7 +655,86 @@ body {
             }
         }
     }
+
+    // 
+    #reservations {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 20px;
+
+        #reservationsTitle {
+            font-family: "Zilla Slab Highlight", cursive;
+            font-size: 80px;
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        #reservationsContainer {
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &>div:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            // 
+            .reservationBox {
+                width: fit-content;
+                height: fit-content;
+                box-sizing: border-box;
+                padding: 20px;
+                transform: skew(-15deg);
+                border: 2px solid white;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                color: white;
+                font-family: "Kelly Slab", cursive;
+                font-size: 22px;
+
+                &>div:not(:last-child) {
+                    margin-right: 30px;
+                }
+
+                .reserv-PlanetPreview {
+                    width: 175px;
+                    height: 100px;
+                    // border: 1px solid white;
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+
+                .reserv-column {
+                    display: flex;
+                    flex-direction: column;
+
+                    &>*:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+
+
+                }
+
+                .reserv-remove {
+                    cursor: pointer;
+                }
+
+            }
+        }
+    }
+
+    // background-color: purple;
 }
+
+
+
 
 // 
 // 
@@ -857,18 +937,6 @@ body {
     }
 
     // 
-    #btn-login {
-        width: fit-content;
-        align-self: flex-end;
-        background: none;
-        border: 1px solid black;
-        font-size: 22px;
-        font-weight: bold;
-        padding: 5px 10px;
-        height: fit-content;
-        cursor: pointer;
-    }
-
     input {
         width: 250px;
         height: 25px;
@@ -876,6 +944,34 @@ body {
         border: 1px solid black;
         padding-left: 10px;
         margin-bottom: 10px;
+    }
+
+    // 
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        input {
+            width: fit-content;
+            align-self: flex-end;
+            background: none;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 5px 10px;
+            height: fit-content;
+            cursor: pointer;
+        }
+
+        #btn-login {
+            border: 1px solid black;
+        }
+
+        #btn-login-exit {
+            border: none !important;
+            margin-right: 5px;
+        }
+
     }
 
 }
