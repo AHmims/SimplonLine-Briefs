@@ -6,7 +6,7 @@ $.post('/getAll', {
     table: 'Planet'
 }, (response) => {
     _PLANETS = JSON.parse(response);
-    console.log(_PLANETS);
+    // console.log(_PLANETS);
     // 
     for (let i = 0; i < _PLANETS.length; i++) {
         var img = document.createElement('div');
@@ -162,3 +162,73 @@ for (let i = 0; i < _INPUTS.length; i++) {
         _INPUTS[i].value = _INPUTS[i].value.toUpperCase();
     }
 }
+// 
+// 
+// SHOW/HIDE PASS UPDATE FORM
+document.getElementById('updatePassword').addEventListener('click', () => {
+    document.getElementById('updatePassFormCont').style.display = "flex";
+});
+// 
+document.getElementById('updatePassFormCont').addEventListener('click', (e) => {
+    if (e.target == document.getElementById('updatePassFormCont'))
+        document.getElementById('updatePassFormCont').style.display = "none";
+});
+// 
+document.addEventListener('keyup', (e) => {
+    if (e.key == "Escape")
+        document.getElementById('updatePassFormCont').style.display = "none";
+});
+// 
+// 
+// UPDATE PASSWORD
+document.getElementById('updatePassForm-btn').addEventListener('click', async () => {
+    var inputs = Array.from(document.getElementById('updatePassForm').children).filter((element) => {
+        return element.getAttribute('type') == 'password';
+    });
+    // 
+    var validation = {
+        filled: true,
+        oldpass: true,
+        newpass: true
+    }
+    // CHECK IF INPUTS ARE EMPTY
+    inputs.forEach(element => {
+        if (element.value == "")
+            validation.filled = false;
+    });
+    // COMPARE OLD PASS WITH DATABASE VALUE
+    await Promise.resolve($.post('/getUserData', {
+        userId: sessionStorage.getItem("user-id")
+    }, (response) => {
+        response = JSON.parse(response);
+        validation.oldpass = (response.pass == inputs[0].value);
+    }));
+    // NEW PASS
+    if (inputs[1].value != inputs[2].value)
+        validation.newpass = false;
+    // 
+    // CHECK VALIDATIONS
+    let msg = '';
+    if (!validation.filled)
+        msg += '* : Some Fields are not filled. \n';
+    if (!validation.oldpass)
+        msg += '* : Old password entred is not correct. \n'
+    if (!validation.newpass)
+        msg += '* : Password confirmation does not match with the new password. \n';
+    // 
+    if (msg != '')
+        alert(msg);
+    else { // THIS MEANS THAT THERE WAS NO ERROR THERFORE SAVE THE NEW DATA INTO THE DB
+        $.post('/updatePass', {
+            data: {
+                id: sessionStorage.getItem("user-id"),
+                password: inputs[1].value
+            }
+        }, (response) => {
+            if (!response)
+                alert('Error saving in DB');
+            else
+                alert('Password changed with success');
+        });
+    }
+});

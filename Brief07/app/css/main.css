@@ -112,6 +112,7 @@ body {
   scroll-snap-align: center;
 }
 #content #galerie {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: unset;
@@ -705,6 +706,11 @@ body {
     justify-content: flex-end !important;
     margin-top: 20px !important;
   }
+
+  #updatePassword {
+    top: 275px !important;
+    left: 200px !important;
+  }
 }
 @media screen and (max-width: 530px) {
   #content {
@@ -770,6 +776,10 @@ body {
   .form-row-input {
     width: 170px !important;
   }
+
+  #updatePassword {
+    left: 160px !important;
+  }
 }
 ::-webkit-scrollbar {
   height: 7.5px;
@@ -812,6 +822,10 @@ body {
   padding-left: 10px;
   margin-bottom: 10px;
 }
+#form-login input::selection {
+  background: black;
+  color: white;
+}
 #form-login div {
   display: flex;
   flex-direction: row;
@@ -833,6 +847,77 @@ body {
 #form-login div #btn-login-exit {
   border: none !important;
   margin-right: 5px;
+}
+
+#updatePassword {
+  position: absolute;
+  cursor: pointer;
+  top: 30px;
+  left: 30px;
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 999px;
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+  align-items: center;
+  font-family: "Kelly Slab", cursive;
+  display: none;
+}
+#updatePassword i,
+#updatePassword span {
+  color: white;
+}
+#updatePassword i {
+  margin-left: 2px;
+}
+#updatePassword span {
+  margin-left: 20px;
+}
+
+#updatePassFormCont {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+#updatePassFormCont #updatePassForm {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: center;
+  padding: 20px;
+  transform: skew(-15deg);
+}
+#updatePassFormCont #updatePassForm > input:not(:last-child) {
+  margin-bottom: 10px;
+  background: none;
+  border: 1px solid black;
+  padding-left: 5px;
+  width: 200px;
+  height: 30px;
+  color: black;
+}
+#updatePassFormCont #updatePassForm > input:not(:last-child)::selection {
+  background: black;
+  color: white;
+}
+#updatePassFormCont #updatePassForm #updatePassForm-btn {
+  align-self: flex-end;
+  background: black;
+  color: white;
+  border: 1px solid black;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=main.css.map */

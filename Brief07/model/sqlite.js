@@ -67,6 +67,12 @@ function getAllTableData(table) {
     return res;
 }
 // 
+function editUserPass(data) {
+    const query = `UPDATE User SET pass = '${data.password}' WHERE id='${data.id}';`;
+    let res = _DB.prepare(query).run();
+    // 
+    return Boolean(res.changes);
+}
 // 
 // getReservation("sdq");
 // 
@@ -78,7 +84,8 @@ module.exports = {
     getUserData,
     deleteQuery,
     editReservation,
-    getAllTableData
+    getAllTableData,
+    editUserPass
 }
 // 
 // createTables();

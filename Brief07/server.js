@@ -49,6 +49,10 @@ _APP.post('/getAll', (req, res) => {
     var ret = DB.getAllTableData(req.body.table);
     res.end(JSON.stringify(ret));
 });
+_APP.post('/updatePass', (req, res) => {
+    var ret = DB.editUserPass(req.body.data);
+    res.end(ret.toString());
+});
 // START THE SERVER
 _APP.listen(_PORT, () => {
     console.log(`Listening on port ${_PORT}\nPlease refere to : localhost:${_PORT}`);

@@ -154,6 +154,8 @@ function loginSucces() {
     document.getElementById('navBar-Right').children[0].style.display = "none";
     document.getElementById('navBar-Right').children[1].style.display = "block";
     // 
+    document.getElementById('updatePassword').style.display = "flex";
+    // 
     getAllReservations();
 }
 // 

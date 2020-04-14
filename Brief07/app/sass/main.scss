@@ -130,6 +130,7 @@ body {
     // GALLERY
     #galerie {
         // background-color: red;
+        position: relative;
         @include shared.flex(row, unset, unset);
 
         #galerie-preview {
@@ -809,6 +810,11 @@ body {
             }
         }
     }
+
+    #updatePassword {
+        top: 275px !important;
+        left: 200px !important;
+    }
 }
 
 // 
@@ -893,6 +899,11 @@ body {
     .form-row-input {
         width: 170px !important;
     }
+
+    // 
+    #updatePassword {
+        left: 160px !important;
+    }
 }
 
 
@@ -944,6 +955,11 @@ body {
         border: 1px solid black;
         padding-left: 10px;
         margin-bottom: 10px;
+
+        &::selection {
+            background: black;
+            color: white;
+        }
     }
 
     // 
@@ -974,4 +990,79 @@ body {
 
     }
 
+}
+
+// 
+// 
+#updatePassword {
+    position: absolute;
+    cursor: pointer;
+    top: 30px;
+    left: 30px;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 999px;
+    @include shared.flex(row, unset, center);
+    font-family: "Kelly Slab", cursive;
+    display: none;
+
+    i,
+    span {
+        color: white;
+    }
+
+    i {
+        margin-left: 2px;
+    }
+
+    span {
+        margin-left: 20px;
+    }
+
+}
+
+// 
+#updatePassFormCont {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include shared.flex(row, center, center);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+
+    #updatePassForm {
+        background-color: white;
+        @include shared.flex(column, unset, center);
+        padding: 20px;
+        transform: skew(-15deg);
+
+        &>input:not(:last-child) {
+            margin-bottom: 10px;
+            background: none;
+            border: 1px solid black;
+            padding-left: 5px;
+            width: 200px;
+            height: 30px;
+            color: black;
+
+            //
+            &::selection {
+                background: black;
+                color: white;
+            }
+        }
+
+        #updatePassForm-btn {
+            align-self: flex-end;
+            background: black;
+            color: white;
+            // font-size: 18px;
+            border: 1px solid black;
+            width: fit-content;
+            height: fit-content;
+            padding: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    }
 }
