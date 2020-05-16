@@ -1,7 +1,6 @@
 <?php
 function getAllDataFromTable($table)
 {
-    console_log($table);
     include 'dbConnection.php';
     $req = "SELECT * FROM $table";
     $res = $cnx->query($req);
@@ -16,52 +15,73 @@ function getAllDataFromTable($table)
     // return $array; 
 }
 // 
-function getColumns($table)
+function selectByOneParam($query, $value)
 {
     include 'dbConnection.php';
-    $req = "DESCRIBE $table";
-    $res = $cnx->query($req);
+    $retValue = null;
+    $req = $cnx->prepare($query);
+    $req->bind_param("s", $value);
+    $req->execute();
+    $req->bind_result($retValue);
+    $req->fetch();
     // 
-    $array = [];
-    while ($row = $res->fetch_assoc()) {
-        // array_push($array, json_encode($row));
-        array_push($array, $row["Field"]);
+    return $retValue;
+}
+function selectByTwoParam($query, $values)
+{
+    include 'dbConnection.php';
+    $retValue = null;
+    $req = $cnx->prepare($query);
+    $req->bind_param("ss", $values[0], $values[1]);
+    $req->execute();
+    $req->bind_result($retValue);
+    $req->fetch();
+    // 
+    return $retValue;
+}
+// 
+if (isset($_POST["onLoadClientEmail"])) {
+    $clientId = selectByOneParam("SELECT id_client FROM client WHERE email_client = ?", $_POST["onLoadClientEmail"]);
+    echo selectByOneParam("SELECT COUNT(quantite_produit) FROM produitpanier WHERE id_panier IN (select id_panier FROM panier where id_client = ?)", $clientId);
+}
+// 
+if (isset($_POST['prodId'])) {
+    $prodId = $_POST['prodId'];
+    include 'dbConnection.php';
+    //IF USER EXISTS OR NOT
+    $clientId = selectByOneParam("SELECT id_client FROM client WHERE email_client = ?", $_POST["clientEmail"]);
+    // 
+    if ($clientId != null) {
+        // IF THE PRODUCT IS AVAILABLE OR NOT
+        $qntProd = selectByOneParam("SELECT qt_max FROM produit WHERE id_produit = ?", $_POST['prodId']);
+        // 
+        if ($qntProd > 0) {
+            // IF USER HAVE A CART OR NOT
+            $onGoingCart = selectByOneParam("SELECT COUNT(id_panier) FROM panier WHERE id_client = ?", $clientId);
+            if ($onGoingCart == 0) {
+                $req = $cnx->prepare("INSERT INTO panier (id_client) VALUES(?)");
+                $req->bind_param("s", $clientId);
+                $req->execute();
+                // 
+            }
+            $prodAlreadyExists = selectByTwoParam("SELECT COUNT(quantite_produit) FROM produitpanier WHERE id_produit = ? AND id_panier IN (select id_panier FROM panier where id_client = ?)", [$prodId, $clientId]);
+            if ($prodAlreadyExists == 0) {
+                // 
+                $req = $cnx->prepare("INSERT INTO produitpanier VALUES(1,?,(select id_panier FROM panier where id_client = ?))");
+                $req->bind_param("ss", $_POST['prodId'], $clientId);
+                echo $req->execute();
+            } else {
+                echo "102";
+            }
+        } else {
+            echo "101";
+        }
+    } else {
+        echo "100";
     }
-    // 
-    return $array;
-}
-// 
-function getRows($table)
-{
-    include 'dbConnection.php';
-    $req = "SELECT * FROM $table";
-    $res = $cnx->query($req);
-    // 
-    $array = [];
-    while ($row = $res->fetch_assoc()) {
-        array_push($array, json_encode($row));
-        // array_push($array, $row["table_name"]);
-    }
-    // 
-    return $array;
-}
-// 
-function removeRow($table, $params)
-{
-    $key = $params["key"];
-    // echo $params["value"];
-    include 'dbConnection.php';
-    $req = $cnx->prepare("DELETE FROM $table WHERE $key = ?");
-    $req->bind_param("s", $params["value"]);
-    return $req->execute();
-}
-// 
-if (isset($_POST['table'])) {
-    // echo $_POST['data']["key"];
-    echo removeRow($_POST['table'], $_POST['data']);
 }
 // 
 function console_log($data)
 {
-    echo '<script>console.log(' . json_encode($data) . ')</script>';
+    echo "<script>console.log(" . json_encode($data) . ")</script>";
 }

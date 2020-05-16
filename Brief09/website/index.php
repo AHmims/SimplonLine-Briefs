@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/toasts.css">
 </head>
 
 <body>
@@ -103,7 +104,7 @@
                     echo "<div class='featured__item__pic set-bg' data-setbg='imgs/$prodImage.png'>";
                     // 
                     echo "<ul class='featured__item__pic__hover'>";
-                    echo "<li><a href='#'><i class='fa fa-shopping-cart'></i></a></li>";
+                    echo "<li><a onclick='jeclick($prodId)'><i class='fa fa-shopping-cart'></i></a></li>";
                     echo "</ul>";
                     // 
                     echo "</div>";
@@ -155,6 +156,9 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <!--  -->
+    <script src="myJs/index.js"></script>
+    <script src="myJs/toast.js"></script>
 </body>
 
 </html>
