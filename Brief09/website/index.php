@@ -56,10 +56,24 @@
                         <h2>Featured Product</h2>
                     </div>
                     <div class="hero__search__form" style="margin-bottom: 20px;">
-                        <form action="#">
-                            <input type="text" placeholder="What do yo u need?">
-                            <button type="submit" class="site-btn">SEARCH</button>
+                        <form class="searchCont">
+                            <input type="text" placeholder="Rechercher un produit..." id="sort-srch-input">
+                            <span class="site-btn">
+                                chercher
+                            </span>
                         </form>
+                    </div>
+                    <div class="sort-controls">
+                        <div class="controls-component">
+                            <span>Nom :</span>
+                            <button type="button" class="control-sort sort-asc" data-sort="nom:asc"></button>
+                            <button type="button" class="control-sort sort-desc" data-sort="nom:desc"></button>
+                        </div>
+                        <div class="controls-component">
+                            <span>Prix :</span>
+                            <button type="button" class="control-sort sort-asc" data-sort="prix:asc"></button>
+                            <button type="button" class="control-sort sort-desc" data-sort="prix:desc"></button>
+                        </div>
                     </div>
                     <div class="featured__controls">
                         <ul>
@@ -97,14 +111,14 @@
                             $categName = $row["nom_categorie"];
                     }
                     // 
-                    echo "<div class='col-lg-3 col-md-4 col-sm-6 mix $categName $prodName'>";
+                    echo "<div class='col-lg-3 col-md-4 col-sm-6 mix $categName prodBox' data-prix=$prodPrice data-nom='$prodName'>";
                     // 
                     echo "<div class='featured__item'>";
                     // 
                     echo "<div class='featured__item__pic set-bg' data-setbg='imgs/$prodImage.png'>";
                     // 
                     echo "<ul class='featured__item__pic__hover'>";
-                    echo "<li><a onclick='jeclick($prodId)'><i class='fa fa-shopping-cart'></i></a></li>";
+                    echo "<li><a onclick='addToBasket($prodId)'><i class='fa fa-shopping-cart'></i></a></li>";
                     echo "</ul>";
                     // 
                     echo "</div>";
@@ -129,16 +143,24 @@
     <div class="banner" style="margin-bottom: 20px;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="banner__pic">
-                        <img src="img/banner/banner-1.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="banner__pic">
-                        <img src="img/banner/banner-2.jpg" alt="">
-                    </div>
-                </div>
+                <?php
+                $packs = getAllDataFromTable('pack');
+                while ($row = $packs->fetch_assoc()) {
+                    $packId = $row["id_pack"];
+                    $packName = $row["nom_pack"];
+                    $packImage = $row["image_pack"];
+                    // 
+                    echo "<div class='col-lg-6 col-md-6 col-sm-6 shopPacks' id='$packId' onclick='addPackToBasket($packId)'>";
+                    // 
+                    echo "<div class='banner__pic'>";
+                    // 
+                    echo "<img src='imgs/$packImage.png' alt='$packName'>";
+                    // 
+                    echo "</div>";
+                    // 
+                    echo "</div>";
+                }
+                ?>
             </div>
         </div>
     </div>

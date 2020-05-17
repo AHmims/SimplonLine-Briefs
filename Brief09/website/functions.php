@@ -42,7 +42,9 @@ function selectByTwoParam($query, $values)
 // 
 if (isset($_POST["onLoadClientEmail"])) {
     $clientId = selectByOneParam("SELECT id_client FROM client WHERE email_client = ?", $_POST["onLoadClientEmail"]);
-    echo selectByOneParam("SELECT COUNT(quantite_produit) FROM produitpanier WHERE id_panier IN (select id_panier FROM panier where id_client = ?)", $clientId);
+    $sum = selectByOneParam("SELECT COUNT(id_panier) FROM produitpanier WHERE id_panier IN (select id_panier FROM panier where id_client = ?)", $clientId);
+    $sum += selectByOneParam("SELECT COUNT(id_panier) FROM packpanier WHERE id_panier IN (select id_panier FROM panier where id_client = ?)", $clientId);
+    echo $sum;
 }
 // 
 if (isset($_POST['prodId'])) {
@@ -57,9 +59,9 @@ if (isset($_POST['prodId'])) {
         // 
         if ($qntProd > 0) {
             // IF USER HAVE A CART OR NOT
-            $onGoingCart = selectByOneParam("SELECT COUNT(id_panier) FROM panier WHERE id_client = ?", $clientId);
+            $onGoingCart = selectByOneParam("SELECT COUNT(id_panier) FROM panier WHERE id_client = ? AND purchased = false", $clientId);
             if ($onGoingCart == 0) {
-                $req = $cnx->prepare("INSERT INTO panier (id_client) VALUES(?)");
+                $req = $cnx->prepare("INSERT INTO panier (id_client,purchased) VALUES(?,false)");
                 $req->bind_param("s", $clientId);
                 $req->execute();
                 // 
@@ -69,6 +71,44 @@ if (isset($_POST['prodId'])) {
                 // 
                 $req = $cnx->prepare("INSERT INTO produitpanier VALUES(1,?,(select id_panier FROM panier where id_client = ?))");
                 $req->bind_param("ss", $_POST['prodId'], $clientId);
+                echo $req->execute();
+            } else {
+                echo "102";
+            }
+        } else {
+            echo "101";
+        }
+    } else {
+        echo "100";
+    }
+}
+// 
+if (isset($_POST['packId'])) {
+    include 'dbConnection.php';
+    $packId = $_POST['packId'];
+    $clientEmail = $_POST['clientEmail'];
+    // 
+    $clientId = selectByOneParam("SELECT id_client FROM client WHERE email_client = ?", $clientEmail);
+    // 
+    if ($clientId != null) {
+        // ADD A TEST HERE TO CHECK WETHER THE CLIENT ALREADY
+        // THE MAXIMUM ALLOWED NUMBER OF PACKS PER DAY
+        $result = false;
+        if (!$result) {
+            // IF USER HAVE A CART OR NOT
+            $onGoingCart = selectByOneParam("SELECT COUNT(id_panier) FROM panier WHERE id_client = ? AND purchased = false", $clientId);
+            if ($onGoingCart == 0) {
+                $req = $cnx->prepare("INSERT INTO panier (id_client,purchased) VALUES(?,false)");
+                $req->bind_param("s", $clientId);
+                $req->execute();
+                // 
+            }
+            // 
+            $panierMaxNb = selectByOneParam("SELECT COUNT(id_panier) FROM packpanier WHERE id_panier IN (select id_panier FROM panier where id_client = ?)", $clientId);
+            if ($panierMaxNb < 3) {
+                // 
+                $req = $cnx->prepare("INSERT INTO packpanier VALUES((select id_panier FROM panier where id_client = ?),?)");
+                $req->bind_param("ss", $clientId, $packId);
                 echo $req->execute();
             } else {
                 echo "102";

@@ -942,6 +942,73 @@ ol {
   margin-bottom: 70px;
 }
 
+.shopPacks > div {
+  cursor: pointer;
+}
+
+.searchCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.searchCont .site-btn {
+  background: #fafafa;
+  color: #818181;
+  border-left: 1px solid #ebebeb;
+  font-weight: 600;
+  padding: 13px;
+  cursor: default;
+  user-select: none;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.sort-controls .controls-component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 10px;
+}
+.sort-controls .controls-component span {
+  margin-right: 5px;
+}
+.sort-controls .controls-component .control-sort {
+  position: relative;
+  display: inline-block;
+  width: 2.7rem;
+  height: 2.7rem;
+  cursor: pointer;
+  font-size: 0.1px;
+  border: none;
+  background: white;
+  color: #444;
+  border: 1px solid #f7f7f7;
+  transition: background 150ms;
+}
+.sort-controls .controls-component .control-sort::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  top: calc(50% - 6px);
+  left: calc(50% - 6px);
+  transform: translateY(1px) rotate(45deg);
+}
+.sort-controls .controls-component .control-sort:hover {
+  background: #f6f6f6;
+}
+.sort-controls .controls-component .sort-desc::after {
+  transform: translateY(-4px) rotate(-135deg);
+}
+.sort-controls .controls-component .mixitup-control-active {
+  background: #f6f6f6;
+}
+
 /*---------------------
   Breadcrumb
 -----------------------*/
