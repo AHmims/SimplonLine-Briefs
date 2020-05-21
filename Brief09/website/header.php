@@ -35,8 +35,8 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li class="active"><a href="#">Home</a></li>
+                <!-- <li><a href="#">Contact</a></li> -->
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -49,13 +49,13 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="#"><img src="img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu" style="margin: 0 auto;width: fit-content;">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="#">Home</a></li>
                             <!-- <li><a href="./contact.html">Contact</a></li> -->
                         </ul>
                     </nav>

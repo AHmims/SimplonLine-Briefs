@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{B97DFC72-2AEC-4030-8B61-E41D086310ED}" Label="" LastModificationDate="1588631247" Name="Définition de cas d&#39;utilisation_1" Objects="17" Symbols="16" Target="Analyse" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{B97DFC72-2AEC-4030-8B61-E41D086310ED}" Label="" LastModificationDate="1590085968" Name="Définition de cas d&#39;utilisation_1" Objects="15" Symbols="14" Target="Analyse" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -1270,8 +1270,8 @@ Shadow=0</a:DisplayPreferences>
 <c:Symbols>
 <o:RectangleSymbol Id="o5">
 <a:CreationDate>1588630516</a:CreationDate>
-<a:ModificationDate>1588631130</a:ModificationDate>
-<a:Rect>((-15712,23400), (16838,-19350))</a:Rect>
+<a:ModificationDate>1590085925</a:ModificationDate>
+<a:Rect>((-15405,22939), (17145,-19811))</a:Rect>
 <a:TextStyle>4130</a:TextStyle>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>16711680</a:LineColor>
@@ -1280,10 +1280,14 @@ Shadow=0</a:DisplayPreferences>
 <a:FontName>Arial,8,N</a:FontName>
 </o:RectangleSymbol>
 <o:TextSymbol Id="o6">
-<a:Text>Site de vente en ligne</a:Text>
+<a:Text>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\f0\fs20 Site de vente en ligne\par
+}
+</a:Text>
 <a:CreationDate>1588631165</a:CreationDate>
-<a:ModificationDate>1588631247</a:ModificationDate>
-<a:Rect>((-15037,20176), (-5364,23775))</a:Rect>
+<a:ModificationDate>1590085968</a:ModificationDate>
+<a:Rect>((-14885,20237), (-5624,23008))</a:Rect>
 <a:TextStyle>4130</a:TextStyle>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>0</a:LineColor>
