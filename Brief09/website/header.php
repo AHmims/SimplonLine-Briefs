@@ -27,16 +27,16 @@
         </div>
         <div class="humberger__menu__cart">
             <ul>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span class="cartProductsNb">0</span></a></li>
+                <li><a href="./shoping-cart.php"><i class="fa fa-shopping-bag"></i> <span class="cartProductsNb">0</span></a></li>
             </ul>
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                <a href="./login/login.php"><i class="fa fa-user"></i> Login</a>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <!-- <li><a href="#">Contact</a></li> -->
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -49,13 +49,13 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="#"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu" style="margin: 0 auto;width: fit-content;">
                         <ul>
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class="active"><a href="./index.html">Home</a></li>
                             <!-- <li><a href="./contact.html">Contact</a></li> -->
                         </ul>
                     </nav>
@@ -63,9 +63,9 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span class="cartProductsNb">0</span></a></li>
+                            <li><a href="./shoping-cart.php"><i class="fa fa-shopping-bag"></i> <span class="cartProductsNb">0</span></a></li>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                                <a href="./login/login.php"><i class="fa fa-user"></i> Login</a>
                             </div>
                         </ul>
                     </div>
