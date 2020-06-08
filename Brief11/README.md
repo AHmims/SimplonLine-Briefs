@@ -54,3 +54,15 @@ problème rencontré.
 <p align="center">
   <img src="./users-min.png" alt="Users">
 </p>
+
+### Page d'accueil
+
+<p align="center">
+  <img src="./home-min.png" alt="Accueil">
+</p>
+
+### Page de CV
+
+<p align="center">
+  <img src="./cv-min.png" alt="CV">
+</p>
