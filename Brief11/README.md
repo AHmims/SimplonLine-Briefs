@@ -52,5 +52,5 @@ problème rencontré.
 ### Création d'utilisateurs avec des rôles différents
 
 <p align="center">
-  <img src="./users-min.png" alt="Users" width="738">
+  <img src="./users-min.png" alt="Users">
 </p>
