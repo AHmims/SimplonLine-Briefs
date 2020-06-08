@@ -58,11 +58,11 @@ problème rencontré.
 ### Page d'accueil
 
 <p align="center">
-  <img src="./home-min.png" alt="Accueil">
+  <img src="./home-min.png" alt="Accueil" width="720">
 </p>
 
 ### Page de CV
 
 <p align="center">
-  <img src="./cv-min.png" alt="CV">
+  <img src="./cv-min.png" alt="CV" width="720">
 </p>
