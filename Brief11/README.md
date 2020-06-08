@@ -8,12 +8,6 @@ Un CMS ou bien un système de gestion de contenu est un programme informatique
 qui facilite la création d’un site web en proposant des modèles de sites, 
 une bibliotheque graphique, etc.
 
-### Pour quoi un CMS ?
-
-Size Limit is a performance budget tool for JavaScript. It checks every commit
-on CI, calculates the real cost of your JS for end-users and throws an error
-if the cost exceeds the limit.
-
 ### Les avantages d'un cms
 
 1. Ne vous oblige pas à avoir des connaissances en programmation.
@@ -52,3 +46,11 @@ problème rencontré.
 * ❌Gestion inadéquate des droits.
 * ❌Les extensions avancées peuvent être coûteuses.
 * ❌Les extensions nécessitent souvent une implémentation manuelle.
+
+## Livrable
+
+### Création d'utilisateurs avec des rôles différents
+
+<p align="center">
+  <img src="./users-min.png" alt="Users" width="738">
+</p>
