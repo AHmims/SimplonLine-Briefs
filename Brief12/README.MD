@@ -7,6 +7,7 @@
 3. Installation de theme OpenShop : https://wordpress.org/themes/open-shop/
 4. Installation de plugin Yoast SEO : https://fr.wordpress.org/plugins/wordpress-seo/
 5. Installation de plugin Wordfence Security : https://fr.wordpress.org/plugins/wordfence/
+6. Installation de plugin de multilangue Weglot : https://wordpress.org/plugins/weglot/
 
 ## Captures d'écran
 
