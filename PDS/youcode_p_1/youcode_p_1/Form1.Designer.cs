@@ -208,6 +208,7 @@
             this.cbPays.Name = "cbPays";
             this.cbPays.Size = new System.Drawing.Size(200, 21);
             this.cbPays.TabIndex = 16;
+            this.cbPays.SelectedIndexChanged += new System.EventHandler(this.cbPays_SelectedIndexChanged);
             // 
             // btnConfirm
             // 
@@ -257,8 +258,10 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Formulaire d\'ajout des apprenants";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

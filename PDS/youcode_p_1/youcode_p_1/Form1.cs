@@ -130,5 +130,32 @@ namespace youcode_p_1
             //date fixée à la date actuelle
             dtpDN.Value = DateTime.Now;
         }
+
+        private void cbPays_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //
+            string[] payS = { "Maroc", "France" };
+            string[][] villes = new string[][]
+            {
+                new string[] { "Safi", "Casablanca", "Agadir" },
+                new string[] { "Paris", "Lorient" }
+            };
+            //boucle sur tous les pays
+            for (int i = 0; i < payS.Length; i++)
+            {
+                //si le pays est égal à la valeur sélectionnée
+                if (cbPays.Text == payS[i])
+                {
+                    //vider la combobox des villes
+                    cbVille.Items.Clear();
+                    //remplir la combobox avec les villes qui appartiennent au pays sélectionné
+                    foreach (string ville in villes[i])
+                    {
+                        cbVille.Items.Add(ville);
+                    }
+                    cbVille.SelectedIndex = 0;
+                }
+            }
+        }
     }
 }

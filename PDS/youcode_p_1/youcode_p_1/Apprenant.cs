@@ -30,32 +30,34 @@ namespace youcode_p_1
             this._ville = ville;
             this._sp = specialites;
         }
-        //get all fields as an array
+        //retourner les données de l'apprenant en même temps que sa position sous forme de tableau
         public string[] getAll(int pos)
         {
             return new[]
             {
-                pos.ToString(), this._nom, this._prenom, this._dn.Date.ToString(), this._tel.ToString(), this._mail, this._pays, this._ville, this._sp
+                pos.ToString(), this._nom, this._prenom, this._dn.ToString("d"), $"0{this._tel}", this._mail, this._pays, this._ville, this._sp
             };
         }
         //
         public ArrayList Validate()
         {
+            //déclarer une liste de tableaux qui contiendra la description des erreurs trouvées lors de la validation des champs
             ArrayList errors = new ArrayList();
             //
-            // name validation
+            // valider le nom
             if (!validateValue("name",this._nom))
                 errors.Add("Nom non valide");
-            //secondName validation
+            //valider le prenom
             if (!validateValue("name", this._prenom))
                 errors.Add("Prénom non valide");
-            //email validation
+            //valider le email
             if (!validateValue("email", this._mail))
                 errors.Add("Adresse email non valide");
-            //Phone number validation
+            //valider le numéro de téléphone
             if(this._tel == 0)
                 errors.Add("Numéro de téléphone non valide");
-            // country / city validation
+            //
+            //assurer que la ville/pays saisi est valide
             string[] payS = {"Maroc", "France"};
             string[][] villes = new string[][]
             {
@@ -89,11 +91,13 @@ namespace youcode_p_1
                 if (!Vexists)
                     errors.Add("Ville non valide");
             }
-            // age validation
+            //
+            // assurer que l'âge est entre 18 et 30 ans
             int age = DateTime.Now.Year - this._dn.Year;
             if(age < 18 || age >= 30)
                 errors.Add("Age doit etre entre 18 et 30ans");
-            // specialties
+            //
+            // assurer que la spécialité entée est valide
             Boolean Sexists = false;
             string[] specialties = {"C#", "JEE", "Back-end & Front-end"};
             foreach (var specialty in specialties)
@@ -110,18 +114,20 @@ namespace youcode_p_1
             return errors;
         }
         //
-        //function to validate input via regex, returns true if valide, else false
+        //fonction de validation d'une valeur en fonction de sa nature et de retourner true/false
         private Boolean validateValue(string type, string input)
         {
             Boolean res = false;
+            //vérifier si le nombre de caractères est supérieur à 0
             if (input.Length > 0)
             {
                 string pattern = "";
+                //assigner un modèle de regex
                 if (type == "name")
                     pattern = @"^[A-Za-z]{2,30}$";
                 else if (type == "email")
                     pattern = @"^[A-Za-z0-9-_.]{2,30}\@[A-Za-z0-9]{2,20}\.[A-Za-z]{2,3}$";
-                //
+                //si l'entrée est valide, la variable res aura la valeur true sinon false
                 res = Regex.Match(input, pattern).Success;
             }
             return res;
