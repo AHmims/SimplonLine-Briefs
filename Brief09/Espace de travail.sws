@@ -4,9 +4,15 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{5B35BA0A-C1C4-4C4B-84E7-AAD71FF55CAB}" Name="Diagramme de classes UML_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Diagramme de classes UML_1.moo"/>
-		<Model Expanded="Yes" ID="{29F479F8-4D73-4C5B-A6A8-400CD498E08D}" Name="mpd" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="mpd.mpd"/>
-		<Model Expanded="Yes" ID="{B97DFC72-2AEC-4030-8B61-E41D086310ED}" Name="Définition de cas d&#39;utilisation_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Définition de cas d&#39;utilisation_1.moo"/>
+		<Model Expanded="Yes" ID="{5B35BA0A-C1C4-4C4B-84E7-AAD71FF55CAB}" Loaded="No" Name="Diagramme de classes UML_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Diagramme de classes UML_1.moo"/>
+		<Model Expanded="Yes" ID="{29F479F8-4D73-4C5B-A6A8-400CD498E08D}" Loaded="No" Name="mpd" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="mpd.mpd"/>
+		<Model Expanded="Yes" ID="{B97DFC72-2AEC-4030-8B61-E41D086310ED}" Loaded="No" Name="Définition de cas d&#39;utilisation_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Définition de cas d&#39;utilisation_1.moo"/>
+		<Model Expanded="Yes" ID="{CC3FB8F8-C441-401B-ACF9-899A0F653083}" Loaded="No" Name="Projet_2" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="../../../BriKole/Concep_Brikole/Projet_2/Projet_2.prj"/>
+		<Model Expanded="Yes" ID="{CC3FB8F8-C441-401B-ACF9-899A0F653083}" Loaded="No" Name="Projet_2" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="../../../BriKole/Concep_Brikole/Projet_2/Projet_2.prj"/>
+		<Model Expanded="Yes" ID="{EAA723A6-F15D-4EB5-B94D-7E48CB0C5762}" Loaded="No" Name="projet001" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="../../../projet001/projet001.prj"/>
+		<Model Expanded="Yes" ID="{EAA723A6-F15D-4EB5-B94D-7E48CB0C5762}" Loaded="No" Name="projet001" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="../../../projet001/projet001.prj"/>
+		<Model Expanded="Yes" ID="{0CA95E8C-634B-444B-BE1D-7C10F79DB8D2}" Loaded="No" Name="Diagramme de classes_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../../projet001/Diagramme de classes_1.moo"/>
+		<Model Expanded="Yes" ID="{EAA723A6-F15D-4EB5-B94D-7E48CB0C5762}" Name="projet001" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="../../../projet001/projet001.prj"/>
 	</Local>
 	<BrowserModule Name="Référentiel"/>
 </Workspace>

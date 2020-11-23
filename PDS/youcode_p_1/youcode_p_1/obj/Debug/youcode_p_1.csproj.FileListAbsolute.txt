@@ -1,0 +1,9 @@
+C:\Users\Admin\Desktop\TO-DO\SimplonLine-Briefs\PDS\youcode_p_1\youcode_p_1\bin\Debug\youcode_p_1.exe.config
+C:\Users\Admin\Desktop\TO-DO\SimplonLine-Briefs\PDS\youcode_p_1\youcode_p_1\bin\Debug\youcode_p_1.exe
+C:\Users\Admin\Desktop\TO-DO\SimplonLine-Briefs\PDS\youcode_p_1\youcode_p_1\bin\Debug\youcode_p_1.pdb
+C:\Users\Admin\Desktop\TO-DO\SimplonLine-Briefs\PDS\youcode_p_1\youcode_p_1\obj\Debug\youcode_p_1.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\TO-DO\SimplonLine-Briefs\PDS\youcode_p_1\youcode_p_1\obj\Debug\youcode_p_1.Form1.resources
+C:\Users\Admin\Desktop\TO-DO\SimplonLine-Briefs\PDS\youcode_p_1\youcode_p_1\obj\Debug\youcode_p_1.Properties.Resources.resources
+C:\Users\Admin\Desktop\TO-DO\SimplonLine-Briefs\PDS\youcode_p_1\youcode_p_1\obj\Debug\youcode_p_1.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\TO-DO\SimplonLine-Briefs\PDS\youcode_p_1\youcode_p_1\obj\Debug\youcode_p_1.exe
+C:\Users\Admin\Desktop\TO-DO\SimplonLine-Briefs\PDS\youcode_p_1\youcode_p_1\obj\Debug\youcode_p_1.pdb
