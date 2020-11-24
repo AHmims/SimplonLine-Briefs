@@ -31,7 +31,7 @@ namespace youcode_p_1
         private void Form1_Load(object sender, EventArgs e)
         {
             // remplir la comboBox des spécialités
-            string[] sps = {"C#", "JEE", "Back-end & Front-end"}; //initialiser un tableau qui contient les valeurs par défaut
+            string[] sps = {"C#", "JEE", "Back-end & Front-end"}; //initialiser un tableau qui contient les spécialités
             //boucle sur chaque entrée du tableau, et ajouter cette valeur à la combobox
             foreach (string sp in sps)
             {
