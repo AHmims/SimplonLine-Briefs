@@ -257,10 +257,15 @@ namespace youcode_p_2
                     //
                     Boolean updateRes = apprenant.update();
                     if (updateRes)
+                    {
                         refreshDBLinks();
+                        MessageBox.Show("Apprenant modifié avec succès", "Succès", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
                     else
                     {
-                        MessageBox.Show("Erreur");
+                        MessageBox.Show("Erreur lors de la modification d'apprenant", "Erreur", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                     }
                 }
             }
@@ -292,7 +297,7 @@ namespace youcode_p_2
                     {
                         initForm();
                         refreshDBLinks();
-                        MessageBox.Show("Apprenant supprime avec sucess", "Success", MessageBoxButtons.OK,
+                        MessageBox.Show("Apprenant supprimé avec succès", "Succès", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
                     else
