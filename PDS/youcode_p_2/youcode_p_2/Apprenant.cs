@@ -163,9 +163,24 @@ namespace youcode_p_2
             {
                 cnx.Open();
                 //
-
+                SqlCommand scm = new SqlCommand("UPDATE apprenant SET nom = @nom, prenom = @prenom, dateNaissance = @dateN, numTel = @numT, adresseMail = @adrsM, adresse = @adrs, pays = @pays, ville = @ville, specialites = @spec WHERE identifiant = @id", cnx);
+                scm.Parameters.AddWithValue("@nom", this._nom);
+                scm.Parameters.AddWithValue("@prenom", this._prenom);
+                scm.Parameters.AddWithValue("@dateN", this._dn);
+                scm.Parameters.AddWithValue("@numT", this._tel);
+                scm.Parameters.AddWithValue("@adrsM", this._mail);
+                scm.Parameters.AddWithValue("@adrs", this._adresse);
+                scm.Parameters.AddWithValue("@pays", this._pays);
+                scm.Parameters.AddWithValue("@ville", this._ville);
+                scm.Parameters.AddWithValue("@spec", this._sp);
+                scm.Parameters.AddWithValue("@id", this.id);
+                int insertRes = scm.ExecuteNonQuery();
                 //
                 cnx.Close();
+                //
+                if (insertRes > 0)
+                    return true;
+                else return false;
             }
             catch (Exception e)
             {
