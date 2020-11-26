@@ -60,6 +60,7 @@ namespace youcode_p_2
             //
             //
             cbIds.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSpF.DropDownStyle = ComboBoxStyle.DropDownList;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             refreshDBLinks();
@@ -141,6 +142,7 @@ namespace youcode_p_2
             tbPrenom.Text = "";
             tbTel.Text = "";
             tbMail.Text = "";
+            tbAdrs.Text = "";
             //sélectionnez la première option
             cbVille.SelectedIndex = 0;
             cbPays.SelectedIndex = 0;
@@ -190,6 +192,18 @@ namespace youcode_p_2
                 cbIds.DataSource = dt;
                 cbIds.ValueMember = "identifiant";
                 cbIds.DisplayMember = "identifiant";
+                lbCount.Text = $"Nombre des apprenants : {dt.Rows.Count}";
+                //
+                cnx.Close();
+                //
+                cnx.Open();
+                sda = new SqlDataAdapter("SELECT specialites FROM apprenant GROUP BY specialites ORDER BY specialites ASC", cnx);
+                dt = new DataTable();
+                sda.Fill(dt);
+                //
+                cbSpF.DataSource = dt;
+                cbSpF.ValueMember = "specialites";
+                cbSpF.DisplayMember = "specialites";
                 //
                 cnx.Close();
                 //
@@ -313,6 +327,32 @@ namespace youcode_p_2
                 Debug.WriteLine(exception);
                 throw;
             }
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cnx.Open();
+                SqlDataAdapter sda =
+                    new SqlDataAdapter($"SELECT * FROM apprenant WHERE specialites = '{cbSpF.SelectedValue}'", cnx);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                //
+                dataGridView1.DataSource = dt;
+                //
+                cnx.Close();
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
+                throw;
+            }
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            refreshDBLinks();
         }
     }
 }

@@ -56,6 +56,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tbTel = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.cbSpF = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lbCount = new System.Windows.Forms.Label();
+            this.btnShowAll = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -316,6 +321,10 @@
             // groupBox3
             // 
             this.groupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.groupBox3.Controls.Add(this.btnShowAll);
+            this.groupBox3.Controls.Add(this.btnFilter);
+            this.groupBox3.Controls.Add(this.cbSpF);
+            this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.editBtn);
             this.groupBox3.Controls.Add(this.dltBtn);
             this.groupBox3.Controls.Add(this.cbIds);
@@ -326,11 +335,59 @@
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             // 
+            // btnFilter
+            // 
+            this.btnFilter.Location = new System.Drawing.Point(9, 143);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(208, 23);
+            this.btnFilter.TabIndex = 10;
+            this.btnFilter.Text = "Filtrer";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // cbSpF
+            // 
+            this.cbSpF.FormattingEnabled = true;
+            this.cbSpF.Location = new System.Drawing.Point(76, 116);
+            this.cbSpF.Name = "cbSpF";
+            this.cbSpF.Size = new System.Drawing.Size(141, 21);
+            this.cbSpF.TabIndex = 9;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 119);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 13);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Spécialités :";
+            // 
+            // lbCount
+            // 
+            this.lbCount.AutoSize = true;
+            this.lbCount.Location = new System.Drawing.Point(12, 541);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.Size = new System.Drawing.Size(133, 13);
+            this.lbCount.TabIndex = 19;
+            this.lbCount.Text = "Nombre des apprenants : *";
+            this.lbCount.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // btnShowAll
+            // 
+            this.btnShowAll.Location = new System.Drawing.Point(108, 172);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(109, 23);
+            this.btnShowAll.TabIndex = 11;
+            this.btnShowAll.Text = "Afficher tout";
+            this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 548);
+            this.ClientSize = new System.Drawing.Size(585, 563);
+            this.Controls.Add(this.lbCount);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancel);
@@ -346,6 +403,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -378,6 +436,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tbTel;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.ComboBox cbSpF;
+        private System.Windows.Forms.Label lbCount;
+        private System.Windows.Forms.Button btnShowAll;
     }
 }
 
