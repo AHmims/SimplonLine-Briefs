@@ -340,6 +340,7 @@ namespace youcode_p_2
                 sda.Fill(dt);
                 //
                 dataGridView1.DataSource = dt;
+                lbCount.Text = $"Nombre des apprenants : {dt.Rows.Count}";
                 //
                 cnx.Close();
             }
