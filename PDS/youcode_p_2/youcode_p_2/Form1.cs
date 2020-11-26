@@ -178,7 +178,7 @@ namespace youcode_p_2
             }
         }
         //
-        private void refreshDBLinks()
+        private void refreshDBLinks(Boolean exclusive = false)
         {
             executed = false;
             try
@@ -189,10 +189,14 @@ namespace youcode_p_2
                 sda.Fill(dt);
                 //
                 dataGridView1.DataSource = dt;
-                cbIds.DataSource = dt;
-                cbIds.ValueMember = "identifiant";
-                cbIds.DisplayMember = "identifiant";
-                lbCount.Text = $"Nombre des apprenants : {dt.Rows.Count}";
+                if (!exclusive)
+                {
+                    cbIds.DataSource = dt;
+                    cbIds.ValueMember = "identifiant";
+                    cbIds.DisplayMember = "identifiant";
+                    lbCount.Text = $"Nombre des apprenants : {dt.Rows.Count}";
+                }
+
                 //
                 cnx.Close();
                 //
@@ -272,7 +276,8 @@ namespace youcode_p_2
                     Boolean updateRes = apprenant.update();
                     if (updateRes)
                     {
-                        refreshDBLinks();
+                        //initForm();
+                        refreshDBLinks(true);
                         MessageBox.Show("Apprenant modifié avec succès", "Succès", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
