@@ -1,20 +1,33 @@
 package com.company;
-import java.io.*;
-import java.util.*;
+
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("Nombre de test (1->6):");
         Scanner sc = new Scanner(System.in);
-        switch (sc.nextInt()){
-            case 1:func_1();break;
-            case 2:func_2();break;
-            case 3:func_3();break;
-            case 4:func_4();break;
-            case 5:func_5();break;
-            case 6:func_6();break;
-            default: System.out.println("Nombre de test invalide!");
+        switch (sc.nextInt()) {
+            case 1:
+                func_1();
+                break;
+            case 2:
+                func_2();
+                break;
+            case 3:
+                func_3();
+                break;
+            case 4:
+                func_4();
+                break;
+            case 5:
+                func_5();
+                break;
+            case 6:
+                func_6();
+                break;
+            default:
+                System.out.println("Nombre de test invalide!");
         }
         //func_1();
         //func_2();
@@ -53,26 +66,28 @@ public class Main {
     private static void func_3() {
         String sequence = "";
         Integer max = 10;
-        for (Integer i = 1; i <= max; i++){
+        for (Integer i = 1; i <= max; i++) {
             sequence += i;
-            if(i != max)
+            if (i != max)
                 sequence += ", ";
         }
         //
         System.out.println(sequence);
     }
+
     //
     private static void func_4() {
         String sequence = "";
         Integer max = 10;
-        for (Integer i = 1; i <= max; i++){
+        for (Integer i = 1; i <= max; i++) {
             sequence += i;
-            if(i != max)
+            if (i != max)
                 sequence += ", " + (100 - (i - 1)) + ", ";
         }
         //
         System.out.println(sequence);
     }
+
     //
     private static void func_5() {
         String nom = "", prenom = "";
@@ -88,11 +103,13 @@ public class Main {
         //
         System.out.println(retFunc(nom, prenom, age));
     }
-    private static String retFunc(String nom, String prenom, Integer age){
+
+    private static String retFunc(String nom, String prenom, Integer age) {
         return String.format("Bonjour %s %s, tu as %dans", nom, prenom, age);
     }
+
     //
-    private static void func_6(){
+    private static void func_6() {
         String sexe = "";
         Integer age = 0;
         Scanner sc = new Scanner(System.in);
@@ -102,25 +119,33 @@ public class Main {
         age = sc.nextInt();
         //
         String ret = retFunc2(sexe, age);
-        if(ret != null)
+        if (ret != null)
             System.out.println(ret);
         else
             System.out.println("Sexe entrée non valide");
     }
-    private static String retFunc2(String sexe, Integer age){
+
+    private static String retFunc2(String sexe, Integer age) {
         String choixSexe = "", choixAge = "";
-        switch (sexe.toLowerCase()){
-            case "femme": case "f": choixSexe = "femme"; break;
-            case "homme": case "h": choixSexe = "homme"; break;
-            default: choixSexe = null;
+        switch (sexe.toLowerCase()) {
+            case "femme":
+            case "f":
+                choixSexe = "femme";
+                break;
+            case "homme":
+            case "h":
+                choixSexe = "homme";
+                break;
+            default:
+                choixSexe = null;
         }
         //
-        if(age < 18)
+        if (age < 18)
             choixAge = "mineur";
         else
             choixAge = "majeur";
         //
-        if(choixSexe != null)
+        if (choixSexe != null)
             return String.format("Vous êtes %s et vous êtes %s", choixSexe, choixAge);
         else
             return null;
