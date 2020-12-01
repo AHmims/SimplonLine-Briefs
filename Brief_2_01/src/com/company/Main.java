@@ -1,0 +1,30 @@
+package com.company;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Bonjour et bievenue à l'application java de premier brief !");
+        //
+        System.out.println("Merci de saisire votre nom complet :");
+        Scanner sc = new Scanner(System.in);
+        String nom = sc.nextLine();
+        //
+        System.out.println(String.format("Bienvenue %s !", nom));
+        //
+        System.out.println("Merci de saisire votre nombre d’heures travaillées par semaine");
+        Integer nbH = sc.nextInt();
+        //
+        if (nbH <= 60) {
+            System.out.println("Merci de saisire votre tarif par heure");
+            Double tarifPH = sc.nextDouble();
+            Double tarifFinale = tarifPH;
+            if (nbH > 40)
+                tarifFinale = tarifPH + (0.5 * tarifPH);
+            System.out.println(String.format("Votre indemnisation est de %s MAD", new DecimalFormat("##.##").format(tarifFinale)));
+        } else if (nbH > 70) {
+            System.out.println("Informations erronés !");
+        }
+    }
+}
