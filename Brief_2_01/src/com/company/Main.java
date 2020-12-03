@@ -20,10 +20,15 @@ public class Main {
             System.out.println("Merci de saisire votre tarif par heure");
             Double tarifPH = sc.nextDouble();
             Double tarifFinale = tarifPH;
-            if (nbH > 40)
+            Double salaire = 0.0;
+            if (nbH > 40) {
                 tarifFinale = tarifPH + (0.5 * tarifPH);
-            System.out.println(String.format("Votre indemnisation est de %s MAD", new DecimalFormat("##.##").format(tarifFinale)));
-        } else if (nbH > 70) {
+                System.out.println(String.format("Votre indemnisation est de %s MAD", new DecimalFormat("##.##").format(tarifFinale)));
+                salaire = tarifFinale * (nbH - 40);
+                salaire += tarifPH * 40;
+            } else salaire = tarifPH * nbH;
+            System.out.println(String.format("Votre salaire par semaine est : %f", salaire));
+        } else {
             System.out.println("Informations erronés !");
         }
     }
