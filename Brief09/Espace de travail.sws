@@ -12,7 +12,9 @@
 		<Model Expanded="Yes" ID="{EAA723A6-F15D-4EB5-B94D-7E48CB0C5762}" Loaded="No" Name="projet001" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="../../../projet001/projet001.prj"/>
 		<Model Expanded="Yes" ID="{EAA723A6-F15D-4EB5-B94D-7E48CB0C5762}" Loaded="No" Name="projet001" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="../../../projet001/projet001.prj"/>
 		<Model Expanded="Yes" ID="{0CA95E8C-634B-444B-BE1D-7C10F79DB8D2}" Loaded="No" Name="Diagramme de classes_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../../projet001/Diagramme de classes_1.moo"/>
-		<Model Expanded="Yes" ID="{EAA723A6-F15D-4EB5-B94D-7E48CB0C5762}" Name="projet001" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="../../../projet001/projet001.prj"/>
+		<Model Expanded="Yes" ID="{EAA723A6-F15D-4EB5-B94D-7E48CB0C5762}" Loaded="No" Name="projet001" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="../../../projet001/projet001.prj"/>
+		<Model Expanded="Yes" ID="{772B2722-CF59-4747-B18A-07514793B674}" Name="DCU" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../SimplonLine-Briefs-2eme/Brief_07/DCU.moo"/>
+		<Model Expanded="Yes" ID="{C2C7EED1-97A4-4AD8-AE28-99F0A42ABF5C}" Name="Brief_07" Selected="Yes" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../SimplonLine-Briefs-2eme/Brief_07/DS.moo"/>
 	</Local>
 	<BrowserModule Name="Référentiel"/>
 </Workspace>
